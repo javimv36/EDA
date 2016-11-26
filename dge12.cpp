@@ -3,15 +3,15 @@
 /*
   pseudo code
   fun(A[],N,a){
-   i,o,f,l;
+   i,o,p,l;
    while(i<N){
     if(A[i]<=a){
-       o=i+1;	
-       
+       p=i+1;
     }
-    if(l<(i+1-o)){
-       l=(i+1-o);
-    }		
+    if(l<(i+1-p)){
+       l=(i+1-p);
+       o=p
+    }
     i++;
    }
    f=o+l-1;
@@ -22,15 +22,26 @@
 #include <algorithm>
 using namespace std;
 #define MAX 10000
-
+/*
+A[]:Vector de alturas de los edificios
+N:Número de edificios
+a:altura minima
+i:contador;
+p:puntero de origen del nuevo subvector;
+l:longitud del mayor subvector encontrado;
+o:origen del mayor subvector encontrado;
+*/
 void solve(int A[], int N, int a){
-  int i, o, f, l;
-  for (i=o=f=l=0; i<N; i++){
-	if(A[i]<=a)o=i+1;
-	if(l<(i+1-o))l=(i+1-o);
+  int i, p, l, o;
+  for (i=p=o=l=0; i<N; i++){
+
+    if(A[i]<=a)p=i+1;
+    if(l<(i+1-p)){
+      l=(i+1-p);
+      o = p;
+    }
   }
-  f=o+l-1;
-  cout << o << " " << f;
+  cout << o << " " << o+l-1;
 }
 
 int main(int argc, char **argv)
