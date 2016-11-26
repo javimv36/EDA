@@ -14,7 +14,7 @@
     }
     i++;
    }
-   f=o+l-1;
+  return o, o+l-1;
   }
 */
 
@@ -30,13 +30,15 @@ i:contador;
 p:puntero de origen del nuevo subvector;
 l:longitud del mayor subvector encontrado;
 o:origen del mayor subvector encontrado;
+
+El coste de la función está en O(N)
+c1+c2*N
 */
 void solve(int A[], int N, int a){
   int i, p, l, o;
   for (i=p=o=l=0; i<N; i++){
-
     if(A[i]<=a)p=i+1;
-    if(l<(i+1-p)){
+    else if(l<(i+1-p)){
       l=(i+1-p);
       o = p;
     }
