@@ -34,8 +34,8 @@ o:origen del mayor subvector encontrado;
 El coste de la función está en O(N)
 c1+c2*N
 */
-void solve(int A[], int N, int a){
-  int i, p, l, o;
+void solve(int A[], int N, int a, int &o, int &f){
+  int i, p, l;
   for (i=p=o=l=0; i<N; i++){
     if(A[i]<=a)p=i+1;
     else if(l<(i+1-p)){
@@ -43,7 +43,7 @@ void solve(int A[], int N, int a){
       o = p;
     }
   }
-  cout << o << " " << o+l-1;
+  f=o+l-1;
 }
 
 int main(int argc, char **argv)
@@ -51,6 +51,7 @@ int main(int argc, char **argv)
   int n;
   int a;
   int N;
+  int o, f;
   int A[MAX];
 
   cin >> n;
@@ -58,7 +59,8 @@ int main(int argc, char **argv)
     cin >> N;
     cin >> a;
     for (int j=0; j<N; j++) cin >> A[j];
-    solve(A,N,a);
+    solve(A,N,a, o, f);
+  cout << o << " " << f << end;
   }
   return 0;
 }
