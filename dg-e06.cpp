@@ -21,23 +21,24 @@ for(n=1;n<Nn++)V[n]+=V[n-1];
 
 I: /forall i: 0<=i<n : V[i] = sum(j): 0<=j<=i V[j]
 */
+#define MAX 10000
+//#define REC
 
-#define REC
+#  ifdef REC
 
-#ifdef REC
-void solve(int V[], int N){
-	isolve(V N 1);
-	return;
-}
-
-void isolve(int V[],int N, int n){
+void isolve(int *V,int N, int n){
 	if (n=N)return;
 	if(n<N){
-		V[n]+=V[n-1];
+		V[n]+=V[(n-1)];
 		isolve(V,N,n+1);
 		return;
 	}
 }
+void solve(int *V, int N){
+	isolve(V, N, 1);
+	return;
+}
+
 #else
 void solve(int V[], int N){
 	int n;
@@ -45,3 +46,20 @@ void solve(int V[], int N){
 	return;
 }
 #endif
+
+int main(int argc, char **argv)
+{
+  int n;
+  int N;
+  int A[MAX];
+	do{
+		N=0;
+		do{
+			cin >> A[N];
+			N++;
+		}while(A[N-1]!=0);
+		solve((int*)A,N-1);
+		for (int n=0;n<N-1;n++)cout << A[n] << endl;
+	}while(N-1>0);
+  return 0;
+}
