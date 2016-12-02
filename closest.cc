@@ -14,7 +14,7 @@ fun mergeSort(V) dev C
   esac
 
 
-{ 
+{
    P : j1+1>=i1 and j2+1>=i2  Even empty
    Q :sorted(V3)
 fun merge(V1[i1..j1],V2[i2..j2]  dev V3[i1..(j1-i1)+(j2-i2)+2]
@@ -33,7 +33,7 @@ fun merge(V1[i1..j1],V2[i2..j2]  dev V3[i1..(j1-i1)+(j2-i2)+2]
       n,i2=n+1,i2+1
    while (i1 <= j1)
       V[n]=V[i1]
-      n,i1=n+1,i1+1      
+      n,i1=n+1,i1+1
 }
 */
 
@@ -54,7 +54,7 @@ int merge(const int* v1, int len1,
   int n,i1,i2;
   for (n=i1=i2=0; (i1<len1) && (i2<len2) ; n++)
     {
-      if (v1[i1] <= v2[i2])  
+      if (v1[i1] <= v2[i2])
 	v3[n]=v1[i1++];
       else
 	v3[n]=v2[i2++] ;
@@ -80,7 +80,7 @@ int mergeSort(const int* A,int len,int *V)
 	int h=len/2;
 	mergeSort(A,h,AUX);
 	mergeSort(A+h,len-h,AUX+h);
-	return merge(AUX,h,AUX+h,len-h,V); 
+	return merge(AUX,h,AUX+h,len-h,V);
       }
     }
 }
@@ -91,15 +91,15 @@ int mergeSort(const int* A,int len,int *V)
 int isolve(const int AA[],int len)
 {
   int h, m1, m2;
-  if (len==2) 
+  if (len==2)
     return abs(AA[0]-AA[1]);
-  if (len==3) 
+  if (len==3)
     return min(isolve(AA, 2), isolve(AA+h, 2));
   else {
     h=(len/2);
     m1=isolve(AA, h);
     m2=isolve(AA+h, h);
-    return min(m1, min(m2,  isolve(AA+h, 2)));
+    return min(m1, min(m2,  isolve(AA+h-1, 2)));
   }
 }
 
@@ -117,7 +117,7 @@ int main(int argc, char **argv)
   int n;
   int N;
   int A[MAX];
-  int S[MAX];  
+  int S[MAX];
   cin >> n;
   for (int i=0; i < n ; i++)
     {
