@@ -17,9 +17,9 @@ using namespace std;
 
 
 bool solve(int A[], int n, int p){
-  int i, j, M, m;
-  for (i=1, M=A[0];i<=p; i++)M=max(M,A[i]);
-  for (j=p+1; (j<n) && (A[j]>m); j++);
+  int i, j, M;
+  for (i=0, M=A[0];i<=p; i++)M=max(M,A[i]);
+  for (j=p+1; (j<n) && (A[j]>M); j++);
   return (j==n);
 }
 
