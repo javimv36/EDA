@@ -12,7 +12,7 @@ fun log(intb,intn)
 return int r
 {b^r-1<n<=b^r}
 */
-void solve(int A[], int N){
+void solve(unsigned long b, unsigned log n){
 
 }
 

@@ -1,6 +1,9 @@
 //Author Javi
 
 /*
+
+Problem: Soy rico
+
   pseudo code
 
 solve(d){

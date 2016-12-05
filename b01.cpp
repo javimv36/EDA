@@ -22,17 +22,36 @@
 using namespace std;
 #define MAX 10000
 
+
+#define REC
+#ifdef REC
+int isolve(int A[], int N, int n, int *p, int *v){
+  if (n>=N) return;
+  else{
+    *p+=(A[n-1]<A[n]&&A[n+1]<A[n]);
+    *v+=(A[n-1]>A[n]&&A[n+1]>A[n]);
+    isolve(A,N,n+1,p,v);
+    return;
+  }
+}
+
+int solve(int A[], int N, int *p, int *v){
+  return isolve(A, N, 1,p,v);
+}
+
+#else
 void solve(int A[], int N){
-  int p,v,n;
+  int n;
   for (p=v=0,n=1; n<N-1; n++){
     p += (A[n-1]<A[n]&&A[n+1]<A[n]);
     v += (A[n-1]>A[n]&&A[n+1]>A[n]);
   }
   cout << p <<" "<< v << endl;
 }
-
+#endif
 int main(int argc, char **argv)
 {
+  int p,v;
   int n;
   int N;
   int A[MAX];
