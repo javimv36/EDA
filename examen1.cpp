@@ -33,11 +33,8 @@
 using namespace std;
 
 int solve(int V[], int N){
-	int l, r;
-	l=0;
-	r=N-1;
-	for(l; l<=r && V[l]==0; l++);
-	for(r; r>=l && V[r]==1; r--);
+	for(int l=0; l<=r && V[l]==0; l++);
+	for(int r=N-1; r>=l && V[r]==1; r--);
 	return r-l+1;
 }
 
