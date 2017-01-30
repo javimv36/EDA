@@ -33,9 +33,11 @@
 using namespace std;
 
 int solve(int V[], int N){
- int l,r;
-	for(l=0; l<=r && V[l]==0; l++);
-	for(r=N-1; r>=l && V[r]==1; r--);
+ int l,r,i;
+ 	for(l=0,r=N-1,i=0; l<=r && i<N; i++){
+ 		l+=(V[l]==0);
+ 		r-=(V[r]==1);
+ 	}
 	return r-l+1;
 }
 
