@@ -3,10 +3,10 @@
 #define MAX 10000
 using namespace std;
 
-bool sumaRepetida(int (&sumas)[MAX], int i){
+bool sumaRepetida(int (&sumas)[MAX],int suma, int i){
 	bool iguales = false;
-	for (int j = 0; j<i;j++)
-		if (sumas[j]==sumas[i])iguales=true;
+	for (int j = 0; j<=i;j++)
+		if (sumas[j]==suma)iguales=true;
 	return iguales;
 }
 
@@ -22,9 +22,9 @@ void solve(int n, int (&sumas)[MAX], int i){
 			cubo=(num%10)*(num%10)*(num%10);
 			suma+=cubo;
 		}
-		sumas[i] = suma;
+		sumas[i] = n;
 		cout << " - ";
-		if (sumaRepetida(sumas, i)) 
+		if (sumaRepetida(sumas, suma, i)) 
 			cout << suma << " -> no cubifinito." << endl;
 		else solve(suma, sumas, ++i);
 	}
