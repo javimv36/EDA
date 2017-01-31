@@ -1,28 +1,22 @@
 #include <iostream>
 #include <algorithm>
-#define MAX 10000
+#define MAX 32
 using namespace std;
 
-bool sumaRepetida(int (&sumas)[MAX],int suma, int i){
-	bool iguales = false;
+bool sumaRepetida(int sumas[],int suma, int i){
 	for (int j = 0; j<=i;j++)
-		if (sumas[j]==suma)iguales=true;
-	return iguales;
+		if (sumas[j]==suma)return true;
+	return false;
 }
 
 void solve(int n, int (&sumas)[MAX], int i){
-	//int num=n;
-	int cubo;
-	int suma = 0;
 	cout << n;
 	if(n==1)	
 		cout << " -> cubifinito." << endl;
 	else{
+		int suma = 0;
 		sumas[i] = n;
-		for (n; n > 0; n/=10){
-			cubo=(n%10)*(n%10)*(n%10);
-			suma+=((n%10)*(n%10)*(n%10));
-		}
+		for (n; n > 0; n/=10) suma+=((n%10)*(n%10)*(n%10));
 		cout << " - ";
 		if (sumaRepetida(sumas, suma, i)) 
 			cout << suma << " -> no cubifinito." << endl;
@@ -31,8 +25,7 @@ void solve(int n, int (&sumas)[MAX], int i){
 }
 
 int main (int argc, char **args ){
-	int sumas[MAX];
-	int n;
+	int sumas[MAX],n;
 	cin >> n;
 	while(n!=0){
 		solve(n, sumas, 0);
