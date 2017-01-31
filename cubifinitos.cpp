@@ -11,18 +11,18 @@ bool sumaRepetida(int (&sumas)[MAX],int suma, int i){
 }
 
 void solve(int n, int (&sumas)[MAX], int i){
-	int num=n;
+	//int num=n;
 	int cubo;
 	int suma = 0;
 	cout << n;
 	if(n==1)	
 		cout << " -> cubifinito." << endl;
 	else{
-		for (num; num > 0; num/=10){
-			cubo=(num%10)*(num%10)*(num%10);
-			suma+=cubo;
-		}
 		sumas[i] = n;
+		for (n; n > 0; n/=10){
+			cubo=(n%10)*(n%10)*(n%10);
+			suma+=((n%10)*(n%10)*(n%10));
+		}
 		cout << " - ";
 		if (sumaRepetida(sumas, suma, i)) 
 			cout << suma << " -> no cubifinito." << endl;
