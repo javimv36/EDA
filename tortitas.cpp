@@ -1,6 +1,6 @@
 #include <iostream>
 //#include <algoritm>
-#define MAX 10000
+#define MAX 100000
 using namespace std;
 void voltea(int tortita[], int volteo){
     int c, i ,j;
@@ -22,14 +22,13 @@ int michelon(int tortita[], int tortitas ,int volteo[], int volteos){
 bool solve(){
 	int tortita[MAX];
 	int volteo[MAX];
-	int tortitas = 0;
+	int volteos, tortitas,t, v = 0;
 	do{
-	int t, v, volteos;
-	t= v= volteos= tortitas=0;
+	t=v=volteos=tortitas=0;
 	cin >> t;
 	while(t != -1){
-            tortita[tortitas]=t;
-            tortitas++;
+        tortita[tortitas]=t;
+        tortitas++;
         cin>>t;
 	}
 	cin >> volteos;
