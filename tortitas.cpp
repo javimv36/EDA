@@ -25,11 +25,12 @@ bool solve(){
 	int tortitas = 0;
 	do{
 	int t, v, volteos;
-	t, v, volteos, tortitas=0;
+	t= v= volteos= tortitas=0;
 	cin >> t;
-	for (tortitas=0;t != -1;tortitas++){
-		tortita[tortitas]=t;
-		cin>>t;
+	while(t != -1){
+            tortita[tortitas]=t;
+            tortitas++;
+        cin>>t;
 	}
 	cin >> volteos;
 	if (tortitas != 0){
@@ -38,6 +39,7 @@ bool solve(){
             if (v>=0&&v<=tortitas)
             volteo[i]=v;
         }
+
         cout << michelon(tortita, tortitas, volteo, volteos) << endl;
 	}
 	}while(tortitas != 0);
