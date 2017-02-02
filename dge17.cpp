@@ -1,14 +1,14 @@
 /*
 P ́erfil de una curva c ́oncava
 
-Dados una serie de valores cuyo p ́erfil se ajusta al de una curva c ́oncava,
+Dados una serie de valores cuyo perfil se ajusta al de una curva concava,
  es decir decrecen hasta undeterminado valor a partir del cual son crecientes,
-  se pide encontrar el valor del m ́ınimo.  Se admitenl ́ıneas estrictamente cre
+  se pide encontrar el valor del mınimo.  Se admiten lıneas estrictamente cre
   cientes o estrictamente decrecientes.
 
   Requisitos de implementaci ́on.
 
-  ndicar la recurrencia utilizada para el c ́alculo del coste y el coste de la
+  indicar la recurrencia utilizada para el calculo del coste y el coste de la
   soluci ́on obtenida.La soluci ́on obtenida debe emplear la t ́ecnica de divide
   y vencer ́asLa funci ́on que resuelve el problema debe recibir los datos en un
   vector y devolver el valor del m ́ınimo.
@@ -22,7 +22,7 @@ Dados una serie de valores cuyo p ́erfil se ajusta al de una curva c ́oncava,
 
    Salida
 
-   ara cada caso de prueba se escribe en una l ́ınea el m ́ınimo de la curva.
+   para cada caso de prueba se escribe en una l ́ınea el m ́ınimo de la curva.
 
    Entrada de ejemplo
    5
@@ -49,21 +49,31 @@ Dados una serie de valores cuyo p ́erfil se ajusta al de una curva c ́oncava,
 using namespace std;
 #define MAX 10000
 
-void solve(unsigned long b, unsigned log n){
+bool solve();
+int minimoConcava(int V[], int l);
 
+int main(int argc, char **argv){
+  while(solve());
+  return 0;
 }
 
-int main(int argc, char **argv)
-{
-  int c; //casos a probar
-  int b;
-  int n;
+bool solve(){
+  int n; //numero de elementos del caso
+  int V[MAX];
 
-  cin >> c;
-  for (int i=0; i<c; i++){
-    cin >> b;
+  cin >> n;
+  while(n>0){
+    for (int i=0; i<n; i++) cin >> V[i];
+    cout << minimoConcava(V,n) << endl;
     cin >> n;
-    solve(b,n);
   }
-  return 0;
+  return false;
+}
+
+int minimoConcava(int V[], int l){
+  int min = V[0];
+  for (int i =1; i<l; i++){
+    min=(min<V[i])?min:V[i];
+  }
+return min;
 }
