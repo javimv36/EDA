@@ -48,6 +48,7 @@ Dados una serie de valores cuyo perfil se ajusta al de una curva concava,
 #include <algorithm>
 using namespace std;
 #define MAX 10000
+#define DYV
 
 bool solve();
 int minimoConcava(int V[], int l);
@@ -57,23 +58,46 @@ int main(int argc, char **argv){
   return 0;
 }
 
-bool solve(){
-  int n; //numero de elementos del caso
-  int V[MAX];
+  bool solve(){
+    int n; //numero de elementos del caso
+    int V[MAX];
 
-  cin >> n;
-  while(n>0){
-    for (int i=0; i<n; i++) cin >> V[i];
-    cout << minimoConcava(V,n) << endl;
     cin >> n;
+    while(n>0){
+      for (int i=0; i<n; i++) cin >> V[i];
+      cout << minimoConcava(V,n) << endl;
+      cin >> n;
+    }
+    return false;
   }
-  return false;
-}
+#ifdef DYV
 
-int minimoConcava(int V[], int l){
-  int min = V[0];
-  for (int i =1; i<l; i++){
-    min=(min<V[i])?min:V[i];
+  int min(int a, int b){
+    return (a<b)?a:b;
   }
-return min;
-}
+  int minimoConcava(int V[], int l){
+    int m1;
+    int m2;
+    if (l==1)return V[0];
+    if (l==2)
+      return min(V[0],V[1]);
+    if (l==3){
+      m1 = min(V[0],V[1]);
+      m2 = min(m1,V[2]);
+    }
+    else{
+      int d=l/2;
+      m1 =minimoConcava(V, d);
+      m2 =minimoConcava(V+d, l-d);
+    }
+    return min(m1,m2);
+  }
+#else
+  int minimoConcava(int V[], int l){
+    int min = V[0];
+    for (int i =1; i<l; i++){
+      min=(min<V[i])?min:V[i];
+    }
+  return min;
+  }
+  #endif
