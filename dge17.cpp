@@ -73,8 +73,8 @@ int main(int argc, char **argv){
 
 #ifdef DYV    //solucion divide y vencerás
 
-  int min(int a, int b){
-    return (a<b)?a:b;
+  int min(int a, int c){
+    return (a<c)?a:c;
   }
   /*
   fun minimoConcava(V,l){
