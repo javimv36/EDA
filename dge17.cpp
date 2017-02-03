@@ -59,7 +59,7 @@ int main(int argc, char **argv){
 }
 
   bool solve(){
-    int n; //numero de elementos del caso
+    int n;
     int V[MAX];
 
     cin >> n;
@@ -70,29 +70,30 @@ int main(int argc, char **argv){
     }
     return false;
   }
-#ifdef DYV
 
+#ifdef DYV    //solucion divide y vencerás
   int min(int a, int b){
     return (a<b)?a:b;
   }
   int minimoConcava(int V[], int l){
-    int m1;
-    int m2;
     if (l==1)return V[0];
-    if (l==2)
-      return min(V[0],V[1]);
-    if (l==3){
-      m1 = min(V[0],V[1]);
-      m2 = min(m1,V[2]);
-    }
-    else{
-      int d=l/2;
-      m1 =minimoConcava(V, d);
-      m2 =minimoConcava(V+d, l-d);
-    }
-    return min(m1,m2);
+    if (l==2)return min(V[0],V[1]);
+    if (l==3)return min(V[0],min(V[1],V[2]));
+    else return (V[(l/2)-1]<V[l/2])?minimoConcava(V, l/2):minimoConcava(V+(l/2), l-(l/2));
   }
-#else
+
+#elif REC   //solución recursiva
+  int min(int a, int b){
+    return (a<b)?a:b;
+  }
+  int minimoConcava(int V[], int l){
+    if (l==1)return V[0];
+    if (l==2)return min(V[0],V[1]);
+    if (l==3)return min(V[0],min(V[1],V[2]));
+    else return min(minimoConcava(V, l/2),minimoConcava(V+d, l-(l/2)));
+  }
+
+#else     //solución iterativo
   int minimoConcava(int V[], int l){
     int min = V[0];
     for (int i =1; i<l; i++){
@@ -100,4 +101,4 @@ int main(int argc, char **argv){
     }
   return min;
   }
-  #endif
+#endif
