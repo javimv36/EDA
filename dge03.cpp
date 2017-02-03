@@ -44,10 +44,10 @@ int max(int a, int b){
    return (a>b)?a:b;
 }
 bool equilibrio(int A[], int n, int p){
-  int M = A[0];
-  int m = A[p+1];
-  for (int i=1;i<=p; i++)M=max(M,A[i]);
-  for (int j=p+2; j<n; j++)m=min(m, A[j]);
+  int M;
+  int m;
+  for (int i=1, M = A[0];i<=p; i++)M=max(M,A[i]);
+  for (int j=p+2, m = A[p+1]; j<n; j++)m=min(m, A[j]);
   return M<m;
 }
 int solve(int A[], int N){

@@ -53,12 +53,14 @@ fun solve(){
 #include <algorithm>
 using namespace std;
 #define MAX 10000
-
+ int min(int a, int b){
+    return (a<b)?a:b;
+  }
 
 bool solve(int A[], int n, int p){
-  int i, j, M, m;
-  for (i=M=0;i<=p; i++)M=max(M,A[i]);
-  for (j=p+1, m=A[j]; j<n; j++)m=min(m, A[j]);
+  int M, m;
+  for (int i=M=0;i<=p; i++)M=max(M,A[i]);
+  for (int j=p+1, m=A[j]; j<n; j++)m=min(m, A[j]);
   return M<m;
 }
 
@@ -73,8 +75,7 @@ int main(int argc, char **argv)
     cin >> n;
     cin >> p;
     for (int j=0; j<n; j++) cin >> A[j];
-    if (solve(A,n,p)) cout << "SI" << endl;
-    else cout << "NO" << endl;
+    cout << ((solve(A,n,p))?"SI":"NO") << endl;
   }
   return 0;
 }
