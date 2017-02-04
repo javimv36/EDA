@@ -54,10 +54,10 @@ int min(int a, int b){return (a<b)?a:b;}
 #ifdef DYVONELINE    //solucion divide y vencerás en una linea
 
   int minimoConcava(int V[], int l){
-    return (l==1)?V[0]:((l==2)?(min(V[0],V[1])):((V[(l/2)-1]<V[l/2])?minimoConcava(V, l/2):minimoConcava(V+(l/2), l-(l/2))));
+     return (l==1)?V[0]:((l==2)?(min(V[0],V[1])):((V[(l/2)-1]<V[l/2])?minimoConcava(V, l/2):minimoConcava(V+(l/2), l-(l/2))));
   }
 
-#elif DYV
+#elif DYV   //solucion divide y venceras
 
   int minimoConcava(int V[], int l){
     if (l==1)return V[0];
@@ -65,7 +65,6 @@ int min(int a, int b){return (a<b)?a:b;}
     if (l==3)return min(V[0],min(V[1],V[2]));
     else return (V[(l/2)-1]<V[l/2])?minimoConcava(V, l/2):minimoConcava(V+(l/2), l-(l/2));
   }
-
 
 #elif REC   //solución recursiva
 
