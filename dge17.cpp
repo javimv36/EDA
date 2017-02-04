@@ -75,10 +75,11 @@ int main(int argc, char **argv){
   int min(int a, int c){
     return (a<c)?a:c;
   }
+
   int minimoConcava(int V[], int l){
     if (l==1)return V[0];
     if (l==2)return min(V[0],V[1]);
-    if (l==3)return min(V[0],min(V[1],V[2]));
+  //  if (l==3)return min(V[0],min(V[1],V[2]));
     else return (V[(l/2)-1]<V[l/2])?minimoConcava(V, l/2):minimoConcava(V+(l/2), l-(l/2));
   }
 
