@@ -50,12 +50,11 @@ using namespace std;
 #define MAX 100000
 
 int solve(int V[], int n){
-  int nCeros, nUnos = 0;
+  int nCeros, nUnos;
   int p=-1;
-  for (int i=0;i<n;i++){
+  for (int i=nCeros=nUnos=0;i<n;i++){
     nCeros+=(V[i]==0);
     nUnos+=(V[i]==1);
-    cout << "unos: " << nUnos << " ceros: " << nCeros << endl;
     p=(nUnos==nCeros)?i:p;
   }
   return p;
