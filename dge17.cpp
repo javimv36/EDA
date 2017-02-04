@@ -47,17 +47,24 @@ Dados una serie de valores cuyo perfil se ajusta al de una curva concava,
 #include <iostream>
 using namespace std;
 #define MAX 10000
-#define DYVONELINE
+#define DYV
 
 int min(int a, int b){return (a<b)?a:b;}
 
-#ifdef DYVONELINE    //solucion divide y vencerás en una linea
+//#ifdef DYVONELINE    //solucion divide y vencerás en una linea
+
+int minimoConcava(int V[], int l){
+     return (l==1)?V[0]:((l==2)?(min(V[0],V[1])):((V[(l/2)-1]<V[l/2])?minimoConcava(V, (l/2)):minimoConcava((V+(l/2)), (l-(l/2)))));
+}
+
+#elseif DYV   //solucion divide y venceras
 
   int minimoConcava(int V[], int l){
-     return (l==1)?V[0]:((l==2)?(min(V[0],V[1])):((V[(l/2)-1]<V[l/2])?minimoConcava(V, l/2):minimoConcava(V+(l/2), l-(l/2))));
+    if (l==1)return V[0];
+    if (l==2)return min(V[0],V[1]);
+    //if (l==3)return min(V[0],min(V[1],V[2]));
+    else return (V[(l/2)-1]<V[l/2])?minimoConcava(V, (l/2)):minimoConcava(V+(l/2), l-(l/2));
   }
-
-#elif DYV   //solucion divide y venceras
   /*
   fun minimoConcava(V,l){
   if (l=1) dev V[0]
@@ -68,16 +75,9 @@ int min(int a, int b){return (a<b)?a:b;}
     dev minimoConcava(V, mitad)
    else
     dev minimoCincava(Vmitad, mitad)
-}
-  */
-  int minimoConcava(int V[], int l){
-    if (l==1)return V[0];
-    if (l==2)return min(V[0],V[1]);
-    if (l==3)return min(V[0],min(V[1],V[2]));
-    else return (V[(l/2)-1]<V[l/2])?minimoConcava(V, l/2):minimoConcava(V+(l/2), l-(l/2));
   }
-
-#elif REC   //solución recursiva
+  */
+#elseif REC   //solución recursiva
 
   int minimoConcava(int V[], int l){
     if (l==1)return V[0];
@@ -101,12 +101,13 @@ bool solve(){
   int n;
   int V[MAX];
   cin >> n;
-  while(n>0){
+  if (!cin){
+    return false;
+  }else{
     for (int i=0; i<n; i++) cin >> V[i];
     cout << minimoConcava(V,n) << endl;
-    cin >> n;
+    return true;
   }
-  return false;
 }
 
 int main(int argc, char **argv){
