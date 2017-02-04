@@ -58,7 +58,18 @@ int min(int a, int b){return (a<b)?a:b;}
   }
 
 #elif DYV   //solucion divide y venceras
-
+  /*
+  fun minimoConcava(V,l){
+  if (l=1) dev V[0]
+  if (l=2) dev min(V);
+  if (l=3) dev min(v);
+  else
+   if (V[mitad-1] < V[mitad])
+    dev minimoConcava(V, mitad)
+   else
+    dev minimoCincava(Vmitad, mitad)
+}
+  */
   int minimoConcava(int V[], int l){
     if (l==1)return V[0];
     if (l==2)return min(V[0],V[1]);
