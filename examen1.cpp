@@ -4,7 +4,7 @@
 	P:{0<=N}
 	fun solve(V[0...N)) dev r-l
 	Q:{r-l:{
-		(l=#i:0<=i<N:i<=r && V[i]==0)
+		(l=#i:0<=i<N:i<=		 && V[i]==0)
 		(r=#i:0<=i<N:i>=l && V[i]==1)}}
 	I:Q[N/n] and 0<=l<=r<N
 
