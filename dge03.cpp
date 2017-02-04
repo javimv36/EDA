@@ -8,13 +8,13 @@ fun xxxx (int a[], int n) return int p
 Q ≡ {(0 ≤ p < n) ∧ (menores(a, n, p) ∧ (¬Ej : 0 ≤ j < p : menores(a, n, j)}
 donde menores(a, n, p) ≡ ∀u, w : 0 ≤ u ≤ p < w < n : a[u] < a[w]
 
-Requisitos de implementaci´on.
+Requisitos de implementación.
 El orden de complejidad del algoritmo debe ser lineal respecto al n´umero de elementos del vector.
 
 Entrada
 
 La entrada comienza con un valor entero que indica el n´umero de casos de prueba. Cada caso de
-prueba consta de dos l´ıneas. La primera contiene el valor de n. La segunda l´ınea contiene los valores del
+prueba consta de dos líneas. La primera contiene el valor de n. La segunda l´ınea contiene los valores del
 vector.
 
 Salida
@@ -36,16 +36,11 @@ Salida de ejemplo
 using namespace std;
 #define MAX 100000
 
-int min(int a, int b){
-    return (a<b)?a:b;
-}
+int min(int a, int b){return (a<b)?a:b;}
+int max(int a, int b){return (a>b)?a:b;}
 
-int max(int a, int b){
-   return (a>b)?a:b;
-}
 bool equilibrio(int A[], int n, int p){
-  int M;
-  int m;
+  int M, m;
   for (int i=1, M = A[0];i<=p; i++)M=max(M,A[i]);
   for (int j=p+2, m = A[p+1]; j<n; j++)m=min(m, A[j]);
   return M<m;
