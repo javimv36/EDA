@@ -38,5 +38,11 @@ Informática de la UCM.
 ## 3. Divide y vencerás
 - [dge17 - Curva cónacava](https://github.com/javimv36/EDA/blob/master/dge17.cpp)
 
+---
+## 4. Ejercicios examen
+- Febrero 2015
+  - [Ejercicio 1 - Suma parejas multiplicativas](https://github.com/javimv36/EDA/blob/master/feb15-1.cpp)
+
+
 [![Licencia Creative Commons](https://i.creativecommons.org/l/by/4.0/88x31.png)](http://creativecommons.org/licenses/by/4.0/)
 Esta obra está bajo una  [Licencia Creative Commons Atribución 4.0 Internacional](http://creativecommons.org/licenses/by/4.0/)
