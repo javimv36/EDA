@@ -20,7 +20,23 @@ fun solve(int )
 #include <iostream>
 #define MAX 100000
 using namespace std;
-
+/*
+  Coste de la funcion O(n)
+*/
+int sumaTotal(int v[], int n){
+  int suma;
+  for (int i=suma=0; i<n;i++) suma += v[i]; //Coste O(n)
+  return suma/2;
+}
+/*
+  Coste de la función O(n)+O(n) -> 2O(n) -> C*O(n) -> O(n)
+*/
+int solve(int v[], int n){
+  int suma, sumaT=sumaTotal(v,n); //Coste función sumaTotal(v,n) -> O(n)
+  for (int i=suma=0; i<n ; i++) suma += (sumaT-v[i])*v[i]; //Coste O(n)
+  return suma;
+}
+/*
 int solve(int v[], int n){
   int suma;
   for(int i=suma=0; i<n; i++)
@@ -29,7 +45,7 @@ int solve(int v[], int n){
     }
   return suma;
 }
-
+*/
 int main(int argc, char **args){
   int V[MAX];
   int N;
