@@ -1,5 +1,5 @@
 /*
-????? Continuaci´on
+????? Continuación
 
 Implementar un algoritmo que resuelva el siguiente problema:
 
@@ -9,17 +9,17 @@ Q ≡ {(0 ≤ p < n) ∧ (menores(a, n, p) ∧ (¬Ej : 0 ≤ j < p : menores(a, 
 donde menores(a, n, p) ≡ ∀u, w : 0 ≤ u ≤ p < w < n : a[u] < a[w]
 
 Requisitos de implementación.
-El orden de complejidad del algoritmo debe ser lineal respecto al n´umero de elementos del vector.
+El orden de complejidad del algoritmo debe ser lineal respecto al número de elementos del vector.
 
 Entrada
 
-La entrada comienza con un valor entero que indica el n´umero de casos de prueba. Cada caso de
-prueba consta de dos líneas. La primera contiene el valor de n. La segunda l´ınea contiene los valores del
+La entrada comienza con un valor entero que indica el número de casos de prueba. Cada caso de
+prueba consta de dos líneas. La primera contiene el valor de n. La segunda línea contiene los valores del
 vector.
 
 Salida
 
-Para cada caso de prueba se escribe en una l´ınea el valor de p.
+Para cada caso de prueba se escribe en una línea el valor de p.
 
 Entrada de ejemplo
 2
@@ -39,16 +39,23 @@ using namespace std;
 int min(int a, int b){return (a<b)?a:b;}
 int max(int a, int b){return (a>b)?a:b;}
 
-bool equilibrio(int A[], int n, int p){
-  int M, m;
-  for (int i=1, M = A[0];i<=p; i++)M=max(M,A[i]);
-  for (int j=p+2, m = A[p+1]; j<n; j++)m=min(m, A[j]);
-  return M<m;
+bool menores (int a[], int n, int p){
+  int u,w;
+  for (u=0; u>=p; u++){
+    for(w=p+1; w<n; w++)
+    if (!(a[u] < a[w]))return false;
+  }
+  return true;
 }
-int solve(int A[], int N){
+
+int solve(int a[], int n){
 	int p;
-	for(p=0;p<N && !equilibrio(A,N,p);p++);
-	return p;
+	for(p=0; p<n && !(menores(a,n,p));p++){
+    for(int j=0; j<p; j++){
+     if (!menores(a,n,j))break;
+    }
+  }
+  return p;
 }
 
 int main(int argc, char **argv){
