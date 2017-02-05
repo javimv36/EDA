@@ -1,3 +1,30 @@
+/*
+Subvectores y recursi´on en C
+Implementa una funci´on recursiva (en O(n)) que cumpla la siguiente especificaci´on:
+{N ≥ 2}
+fun farest(int V[], int N) return int d
+{d = m´ax p, q : 0 ≤ p ≤ q < N : |V [p] − V [q]|}
+Entrada
+El primer n´umero de la entrada indica el n´umero de casos de prueba que aparecer´an a continuaci´on.
+Cada caso de prueba consta de dos l´ıneas: en la primera se expresa el n´umero de componentes del vector
+de entrada -cumpliendo la precondici´on N ≥ 2- y en la segunda, los componentes separados por espacio.
+Salida
+Para cada caso de prueba se escribir´a, en una l´ınea diferente, el valor d que cumple la postcondici´on.
+Entrada de ejemplo
+3
+10
+1 2 8 4 5 6 7 3 9 10
+4
+30 2 35 37
+10
+6 2 3 4 5 6 16 26 22 14
+Salida de ejemplo
+9
+35
+24
+Nota
+Preferible hacer recursi´on pr divisi´on, aunque se puede hacer por sustracci´on
+*/
 #include <iostream>
 #define MAX 100000
 using namespace std;
