@@ -1,5 +1,42 @@
-# EDA
-Repositorio con las practicas de Estructura de Datos y Algoritmos
+<!--
+Esta obra está bajo una licencia Licencia Creative Commons Atribución 4.0 Internacional.
+Licencia: http://creativecommons.org/licenses/by/4.0/
+-->
+# EDA - ejercicios prácticos
+---
 
-En este repositorio se irán subiendo la prácticas y ejercicios de la asignatura Estructura de Datos y Algoritmos de la Facultad de 
+Estructura de Datos y Algoritmos (EDA).
+
+Soluciones a los ejercicios de la asignatura EDA de la Facultad de
 Informática de la UCM.
+
+---
+## 1. Iterativos
+- [a09 - Soy rico](https://github.com/javimv36/EDA/blob/master/a09.cpp)
+- [b00 - peña atlética](https://github.com/javimv36/EDA/blob/master/b00.cpp)
+- [b01 - Temperaturas extremas](https://github.com/javimv36/EDA/blob/master/b01.cpp)
+- [c01 - Log(b,n) suelo](https://github.com/javimv36/EDA/blob/master/c01.cpp)
+- [dg-e06 - Acumula valores](https://github.com/javimv36/EDA/blob/master/dg-e06.cpp)
+- [dge02 - Vector en equilibrio](https://github.com/javimv36/EDA/blob/master/dge02.cpp)
+- [dge11 - Última posición en equilibrio](https://github.com/javimv36/EDA/blob/master/dge11.cpp)
+- [dge12 - Ataque aéreo](https://github.com/javimv36/EDA/blob/master/dge12.cpp)
+- [dge17 - Curva cónacava](https://github.com/javimv36/EDA/blob/master/dge17.cpp)
+- [p1b - Log(b,n) techo](https://github.com/javimv36/EDA/blob/master/p1b.cpp)
+- [Goteras](https://github.com/javimv36/EDA/blob/master/goteras.cpp)
+- [Tortitas](https://github.com/javimv36/EDA/blob/master/tortitas.cpp)
+
+---
+## 2. Recursivos
+- [b01 - Temperaturas extremas](https://github.com/javimv36/EDA/blob/master/b01.cpp)
+- [c02 - closest](https://github.com/javimv36/EDA/blob/master/c02.cpp)
+- [c03 - farest](https://github.com/javimv36/EDA/blob/master/c03.cpp)
+- [dg-e06 - Acumula valores](https://github.com/javimv36/EDA/blob/master/dg-e06.cpp)
+- [cubifinitos](https://github.com/javimv36/EDA/blob/master/cubifinitos.cpp)
+- [dge17 - Curva cónacava](https://github.com/javimv36/EDA/blob/master/dge17.cpp)
+
+---
+## 3. Divide y vencerás
+- [dge17 - Curva cónacava](https://github.com/javimv36/EDA/blob/master/dge17.cpp)
+
+[![Licencia Creative Commons](https://i.creativecommons.org/l/by/4.0/88x31.png)](http://creativecommons.org/licenses/by/4.0/)
+Esta obra está bajo una  [Licencia Creative Commons Atribución 4.0 Internacional](http://creativecommons.org/licenses/by/4.0/)
