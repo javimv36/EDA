@@ -33,6 +33,7 @@ Informática de la UCM.
 - [dg-e06 - Acumula valores](https://github.com/javimv36/EDA/blob/master/dg-e06.cpp)
 - [cubifinitos](https://github.com/javimv36/EDA/blob/master/cubifinitos.cpp)
 - [dge17 - Curva cónacava](https://github.com/javimv36/EDA/blob/master/dge17.cpp)
+- [Números especulares](https://github.com/javimv36/EDA/blob/master/feb15-2.cpp)
 
 ---
 ## 3. Divide y vencerás
@@ -42,7 +43,9 @@ Informática de la UCM.
 ## 4. Ejercicios examen
 - Febrero 2015
   - [Ejercicio 1 - Suma parejas multiplicativas](https://github.com/javimv36/EDA/blob/master/feb15-1.cpp)
+  - [Ejercicio 2 - Números especulares](https://github.com/javimv36/EDA/blob/master/feb15-2.cpp)
+  - [Ejercicio 3 - Productos dieta](https://github.com/javimv36/EDA/blob/master/feb15-3.cpp)
 
-
+---
 [![Licencia Creative Commons](https://i.creativecommons.org/l/by/4.0/88x31.png)](http://creativecommons.org/licenses/by/4.0/)
 Esta obra está bajo una  [Licencia Creative Commons Atribución 4.0 Internacional](http://creativecommons.org/licenses/by/4.0/)
