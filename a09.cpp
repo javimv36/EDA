@@ -46,4 +46,3 @@ int solve(int n){
     }
  return i;
 }
-
