@@ -19,7 +19,7 @@
 		}						{I1 and notB1}
 								{I2}
 		while(r>=l && V[r]==1){	{I2 and B2}
-			r--					
+			r--
 								{I2}
 		} 						{I2 and notB2}
 		dev r-l
