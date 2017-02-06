@@ -14,6 +14,16 @@ Por ejemplo, la imagen especular de 13492 es 29431 y la imagen especular del 100
 //Author Javi
 #include <iostream>
 using namespace std;
+// RECURSIVO NO FINAL
+
+int solve(unsigned int n){
+  if (n<10){
+    return n;
+  }else{
+    int r
+    return solve(n/10)
+  }
+}
 
 // RECURSIVO FINAL
 int solve(unsigned int n, unsigned int resultado){
