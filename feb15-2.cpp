@@ -13,19 +13,23 @@ Por ejemplo, la imagen especular de 13492 es 29431 y la imagen especular del 100
 */
 //Author Javi
 #include <iostream>
+#define FINAL 0
+#define NOFINAL 1
 using namespace std;
-// RECURSIVO NO FINAL
 
+#if NOFINAL // RECURSIVO NO FINAL
 int solve(unsigned int n){
-  if (n<10){
+  if (n<10)
     return n;
-  }else{
-    int r
-    return solve(n/10)
+  else{
+    int r=n%10;
+    int e,H;
+    for(H=1, e=n/10; e > 0 ; e/=10) H*=10;
+    return H + solve(n/10);
   }
 }
 
-// RECURSIVO FINAL
+#elif FINAL // RECURSIVO FINAL
 int solve(unsigned int n, unsigned int resultado){
   return (n<10)?(10*resultado + n):(solve(n/10, (10*resultado+n%10)));
 }
