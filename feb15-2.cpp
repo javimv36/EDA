@@ -30,19 +30,19 @@ int solve(unsigned int n){
 }
 
 #elif FINAL // RECURSIVO FINAL
-int solve(unsigned int n, unsigned int resultado){
-  return (n<10)?(10*resultado + n):(solve(n/10, (10*resultado+n%10)));
-}
-/*
-pseudo-code
-fun solve(n, resultado){
-  if n<10
-    dev 10*resultado+n
-  else
-    dev solve(n/10, (10*resultado+n%10))
-}
-*/
-
+  int solve(unsigned int n, unsigned int resultado){
+    return (n<10)?(10*resultado + n):(solve(n/10, (10*resultado+n%10)));
+  }
+#endif
+  /*
+  pseudo-code
+  fun solve(n, resultado){
+    if n<10
+      dev 10*resultado+n
+    else
+      dev solve(n/10, (10*resultado+n%10))
+  }
+  */
 int main(int argc, char **args){
   unsigned int n;
   cin >> n;
