@@ -50,7 +50,16 @@ Informática de la UCM.
   - [Ejercicio 1 - Suma parejas multiplicativas](https://github.com/javimv36/EDA/blob/master/feb15-1.cpp)
   - [Ejercicio 2 - Números especulares](https://github.com/javimv36/EDA/blob/master/feb15-2.cpp)
   - [Ejercicio 3 - Productos dieta](https://github.com/javimv36/EDA/blob/master/feb15-3.cpp)
+- Febrero 2016
+  - [Ejercicio 1]()
+  - [Ejercicio 2]()
+  - [Ejercicio 3]()
 
+---
+
+~~~~
+Ejercicios prácticos desarrollados en C++
+~~~~
 ---
 [![Licencia Creative Commons](https://i.creativecommons.org/l/by/4.0/88x31.png)](http://creativecommons.org/licenses/by/4.0/)
 Esta obra está bajo una  [Licencia Creative Commons Atribución 4.0 Internacional](http://creativecommons.org/licenses/by/4.0/)
