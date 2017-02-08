@@ -60,21 +60,6 @@ void vueltaAtrasDieta(int P[], int T[], int C[],int &precio, int &proteinas, int
             }else
               vueltaAtrasDieta(P,T,C,precio,proteinas,calorias,M,Q,minCalorias,k+1,n,S,Smejor);
           }
-          /*
-      calorias-=C[k];
-      precio-=P[k];
-      proteinas-=T[k];
-      S[k]=false;
-      if ((precio<=M) && (proteinas>=Q)){
-        if(k==n-1){
-          if(calorias < minCalorias){
-            minCalorias=calorias;
-            copiarSolucion(S, Smejor, k);
-          }
-          }else
-            vueltaAtrasDieta(P,T,C,precio,proteinas,calorias,M,Q,minCalorias,k+1,n,S,Smejor);
-      }
-      */
     }
 }
 
