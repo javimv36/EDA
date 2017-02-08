@@ -18,18 +18,6 @@ al menos de Q y el valor calórico sea lo menor posible.
 #define MAX 10000
 using namespace std;
 
-bool esValida(int S[], int k, int precio, int M){
-  bool correcto = true;
-  int i=0;
-  while(i<k&&correcto){
-    if(S[i]==S[k])
-      correcto = false;
-    else
-      i++;
-  }
-  return correcto;
-}
-
 void copiarSolucion(bool S[], bool Smejor[], int n){
   for(int i=0;i<n;i++){
     Smejor[i]=S[i];
