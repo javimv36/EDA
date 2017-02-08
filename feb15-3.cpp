@@ -73,7 +73,7 @@ int main(int argc, char **args){
   int precio, proteinas,calorias;
   precio=calorias=proteinas=0;
   /*
-  cin << n;
+  cin << n;   //DESCOMENTAR PARA PEDIR LOS DATOS DE LOS ALIMENTOS INDIVIDUALMENTE
   for (int i = 0; i<n; i++){
     cout << "Precio alimento " << i << ": ";
     cin >> P[i];
