@@ -42,6 +42,7 @@ Informática de la UCM.
 ---
 ## 4. Backtracking (Vuelta atrás)
 - [Productos dieta](https://github.com/javimv36/EDA/blob/master/feb15-3.cpp)
+- [Caballo](https://github.com/javimv36/EDA/blob/master/caballo.cpp)
 
 ---
 ## 5. Ejercicios examen
