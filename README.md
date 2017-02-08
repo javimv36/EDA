@@ -2,10 +2,10 @@
 Esta obra está bajo una licencia Licencia Creative Commons Atribución 4.0 Internacional.
 Licencia: http://creativecommons.org/licenses/by/4.0/
 -->
-# EDA - ejercicios prácticos
+# Estructura de Datos y Algoritmos
 ---
 
-Estructura de Datos y Algoritmos (EDA).
+Estructura de Datos y Algoritmos (EDA) - ejercicios prácticos.
 
 Soluciones a los ejercicios de la asignatura EDA de la Facultad de
 Informática de la UCM.
@@ -40,7 +40,11 @@ Informática de la UCM.
 - [dge17 - Curva cónacava](https://github.com/javimv36/EDA/blob/master/dge17.cpp)
 
 ---
-## 4. Ejercicios examen
+## 4. Backtracking (Vuelta atrás)
+- [Productos dieta](https://github.com/javimv36/EDA/blob/master/feb15-3.cpp)
+
+---
+## 5. Ejercicios examen
 - Febrero 2015
   - [Ejercicio 1 - Suma parejas multiplicativas](https://github.com/javimv36/EDA/blob/master/feb15-1.cpp)
   - [Ejercicio 2 - Números especulares](https://github.com/javimv36/EDA/blob/master/feb15-2.cpp)

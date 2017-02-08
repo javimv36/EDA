@@ -22,7 +22,6 @@ int solve(unsigned int n){
   if (n<10)
     return n;
   else{
-  //  int r=n%10;
     int e,H, r=n%10;
     for(H=1, e=n/10; e > 0 ; e/=10) H*=10;
     return r*H + solve(n/10);
