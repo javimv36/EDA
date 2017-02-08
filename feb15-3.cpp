@@ -17,27 +17,93 @@ al menos de Q y el valor calórico sea lo menor posible.
 #include <iostream>
 #define MAX 10000
 using namespace std;
-bool esValida(int S[], int k, int precio)
+
+bool esValida(int S[], int k, int precio, int M){
+  bool correcto = true;
+  int i=0;
+  while(i<k&&correcto){
+    if(S[i]==S[k])
+      correcto = false;
+    else
+      i++;
+  }
+  return correcto;
+}
+
+void copiarSolucion(bool S[], bool Smejor[], int n){
+  for(int i=0;i<n;i++){
+    Smejor[i]=S[i];
+    cout << Smejor[i];
+  }
+  cout << endl;
+}
+
 void vueltaAtrasDieta(int P[], int T[], int C[],int &precio, int &proteinas, int &calorias, int M, int Q, int &minCalorias, int k, int n, bool S[], bool Smejor[]){
-    for (int i=0; i<n; i++){
-      sol[k]=true;
-      if (esValida(S, k)){
-        calorias+=C[i];
-        precio+=P[i];
-        proteinas+=T[i];
-        if (proteinas>=Q){
+    for(int i=1;i>=0;i--){
+        S[k]=i;
+        if (i==1){
+          calorias+=C[k];
+          precio+=P[k];
+          proteinas+=T[k];
+        }else{
+          calorias-=C[k];
+          precio-=P[k];
+          proteinas-=T[k];
+        }
+
+        if ((precio<=M) && (proteinas>=Q)){
+          if(k==n-1){
+            if(calorias < minCalorias){
+              minCalorias=calorias;
+              copiarSolucion(S, Smejor, k);
+            }
+            }else
+              vueltaAtrasDieta(P,T,C,precio,proteinas,calorias,M,Q,minCalorias,k+1,n,S,Smejor);
+          }
+          /*
+      calorias-=C[k];
+      precio-=P[k];
+      proteinas-=T[k];
+      S[k]=false;
+      if ((precio<=M) && (proteinas>=Q)){
+        if(k==n-1){
           if(calorias < minCalorias){
             minCalorias=calorias;
-            copiarSolucion(S, Smejor);
+            copiarSolucion(S, Smejor, k);
           }
-          tratarSolucion();
-        }else
-          vueltaAtrasDieta()
+          }else
+            vueltaAtrasDieta(P,T,C,precio,proteinas,calorias,M,Q,minCalorias,k+1,n,S,Smejor);
       }
+      */
     }
-  }
+}
 
 int main(int argc, char **args){
-
+  int P[MAX]= {1,2,1,3,2,4,4,3,1};
+  int T[MAX]= {10,1,10,4,2,1,3,5,1};
+  int C[MAX]= {5,9,1,5,3,2,4,4,8};
+  int n=9;
+  bool S[MAX];
+  bool Smejor[MAX];
+  int minCalorias=10000;
+  int precio, proteinas,calorias;
+  precio=calorias=proteinas=0;
+  /*
+  cin << n;
+  for (int i = 0; i<n; i++){
+    cout << "Precio alimento " << i << ": ";
+    cin >> P[i];
+    cout << "Proteinas alimento " << i << ": ";
+    cin >> T[i];
+    cout << "Calorias alimento " << i << ": ";
+    cin >> C[i];
+  }
+  */
+  int M,Q;
+  cout << "Precio maximo (M): ";
+  cin >> M;
+  cout << "Proteinas minimas (Q):";
+  cin >> Q;
+  vueltaAtrasDieta(P,T,C,precio,proteinas,calorias,M,Q,minCalorias,0,n,S,Smejor);
   return 0;
 }
