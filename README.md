@@ -14,7 +14,7 @@ Informática de la UCM.
 ## 1. Iterativos
 - [a09 - Soy rico](https://github.com/javimv36/EDA/blob/master/files/a09.cpp)
 - [b00 - peña atlética](https://github.com/javimv36/EDA/blob/master/files/b00.cpp)
-- [b01 - Temperaturas extremas](https://github.com/javimv36/EDA/blob/files/master/b01.cpp)
+- [b01 - Temperaturas extremas](https://github.com/javimv36/EDA/blob/master/files/b01.cpp)
 - [c01 - Log(b,n) suelo](https://github.com/javimv36/EDA/blob/master/files/c01.cpp)
 - [dg-e06 - Acumula valores](https://github.com/javimv36/EDA/blob/master/files/dg-e06.cpp)
 - [dge02 - Vector en equilibrio](https://github.com/javimv36/EDA/blob/master/files/dge02.cpp)
