@@ -1,8 +1,36 @@
 /*
-Ejercicio 3
-funcion que genere verctores crecientes por los pelos y d-divertidos
+Ejercicio 3 - Escribe una función para generar vectores crecientes por los pelos d-divertidos
+En concreto, la función recibirá el tamaño del vector 0<=n<=1000, el valor de d>0 y el valor
+para el primer elemento del vector y generará la salida en orden lexiogáfico. Se admite el uso
+de funciones auxiliares.
 
-recibe n, d y priemer elemnto del Vector
+La entrada comienza con una linea que contiene el numero de casos de prueba.La entrada contendrá
+los valores de n, d y e. El programa escribirá en lineas separadas cada uno de los vectores del
+resultado, con los elementos separados por un espacio.
+
+NOTA:
+Un vector es CRECIENTE POR LOS PELOS cuando a demas de ser creciente, la
+diferencia entre un elemento y el elemento siguiente es como mucho 1.
+
+1 2 3 4 SI
+1 2 2 3 SI
+1 1 1 1 SI
+1 2 1 3 NO
+
+Un vector es aburrido si los elementos aparecen muchas veces. Y es D-DIVERTIDO si ningun
+elemento se repite mas de D-veces
+Ejemplos:
+  1-divertido
+    1 2 3 4
+    4 3 7 0
+  3-divertido
+    6 7 6 6
+  2-divertido
+    7 3 7 3
+    7 3 7 0
+  4-divertido
+    9 9 9 9
+
 */
 void tratarSolucion(int S[], int n){
   for (int i = 0; i<n; i++) cout << S[i];

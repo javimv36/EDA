@@ -24,6 +24,7 @@ Informática de la UCM.
 - [p1b - Log(b,n) techo](https://github.com/javimv36/EDA/blob/master/files/p1b.cpp)
 - [Goteras](https://github.com/javimv36/EDA/blob/master/files/goteras.cpp)
 - [Tortitas](https://github.com/javimv36/EDA/blob/master/files/tortitas.cpp)
+- [Creciente por los pelos y d-divertido](https://github.com/javimv36/EDA/blob/master/files/feb17-1.cpp)
 
 ---
 ## 2. Recursivos
@@ -38,26 +39,28 @@ Informática de la UCM.
 ---
 ## 3. Divide y vencerás
 - [dge17 - Curva cónacava](https://github.com/javimv36/EDA/blob/master/files/dge17.cpp)
+- [Creciente por los pelos](https://github.com/javimv36/EDA/blob/master/files/feb17-2.cpp)
 
 ---
 ## 4. Backtracking (Vuelta atrás)
 - [Productos dieta](https://github.com/javimv36/EDA/blob/master/files/feb15-3.cpp)
 - [Caballo](https://github.com/javimv36/EDA/blob/master/files/caballo.cpp)
+- [Genera creciente por los pelos y d-divertido](https://github.com/javimv36/EDA/blob/master/files/feb17-3.cpp)
 
 ---
 ## 5. Ejercicios examen
 - Febrero 2015
-  - [Ejercicio 1 - Suma parejas multiplicativas](https://github.com/javimv36/EDA/blob/master/files/feb15-1.cpp)
-  - [Ejercicio 2 - Números especulares](https://github.com/javimv36/EDA/blob/master/files/feb15-2.cpp)
-  - [Ejercicio 3 - Productos dieta](https://github.com/javimv36/EDA/blob/master/files/feb15-3.cpp)
+  1. [Suma parejas multiplicativas](https://github.com/javimv36/EDA/blob/master/files/feb15-1.cpp)
+  - [Números especulares](https://github.com/javimv36/EDA/blob/master/files/feb15-2.cpp)
+  - [Productos dieta](https://github.com/javimv36/EDA/blob/master/files/feb15-3.cpp)
 - Febrero 2016
-  - [Ejercicio 1]()
-  - [Ejercicio 2]()
-  - [Ejercicio 3]()
-- Febrero 2017 (1)
-  - [Ejercicio 1]()
-  - [Ejercicio 2]()
-  - [Ejercicio 3]()
+  1. [Ejercicio 1]()
+  2. [Ejercicio 2]()
+  3. [Ejercicio 3]()
+- Febrero 2017 (09/02/2017)
+  1. [Creciente por los pelos y d-divertido](https://github.com/javimv36/EDA/blob/master/files/feb17-1.cpp)
+  2. [Creciente por los pelos](https://github.com/javimv36/EDA/blob/master/files/feb17-2.cpp)
+  3. [Genera creciente por los pelos y d-divertido](https://github.com/javimv36/EDA/blob/master/files/feb17-3.cpp)
 
 ---
 

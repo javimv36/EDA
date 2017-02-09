@@ -10,8 +10,13 @@ caso de prueba tendrá el valor n y los elementos del vector y el programa
 escribira SI si el vector es creciente por los pelos y NO en caso contrario
 
 NOTA:
-Un vector es creciente por los pelos cuando a demas de ser creciente, la
+Un vector es CRECIENTE POR LOS PELOS cuando a demas de ser creciente, la
 diferencia entre un elemento y el elemento siguiente es como mucho 1.
+
+1 2 3 4 SI
+1 2 2 3 SI
+1 1 1 1 SI
+1 2 1 3 NO
 */
 #include <iostream>
 #include <algorithm>
