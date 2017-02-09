@@ -20,7 +20,7 @@ Informática de la UCM.
 - [dge02 - Vector en equilibrio](https://github.com/javimv36/EDA/blob/master/files/dge02.cpp)
 - [dge11 - Última posición en equilibrio](https://github.com/javimv36/EDA/blob/master/files/dge11.cpp)
 - [dge12 - Ataque aéreo](https://github.com/javimv36/EDA/blob/master/files/dge12.cpp)
-- [dge17 - Curva cónacava](https://github.com/javimv36/EDA/blob/master/files/dge17.cpp)
+- [dge17 - Curva cóncava](https://github.com/javimv36/EDA/blob/master/files/dge17.cpp)
 - [p1b - Log(b,n) techo](https://github.com/javimv36/EDA/blob/master/files/p1b.cpp)
 - [Goteras](https://github.com/javimv36/EDA/blob/master/files/goteras.cpp)
 - [Tortitas](https://github.com/javimv36/EDA/blob/master/files/tortitas.cpp)
@@ -33,12 +33,12 @@ Informática de la UCM.
 - [c03 - farest](https://github.com/javimv36/EDA/blob/master/files/c03.cpp)
 - [dg-e06 - Acumula valores](https://github.com/javimv36/EDA/blob/master/files/dg-e06.cpp)
 - [cubifinitos](https://github.com/javimv36/EDA/blob/master/files/cubifinitos.cpp)
-- [dge17 - Curva cónacava](https://github.com/javimv36/EDA/blob/master/files/dge17.cpp)
+- [dge17 - Curva cóncava](https://github.com/javimv36/EDA/blob/master/files/dge17.cpp)
 - [Números especulares](https://github.com/javimv36/EDA/blob/master/files/feb15-2.cpp)
 
 ---
 ## 3. Divide y vencerás
-- [dge17 - Curva cónacava](https://github.com/javimv36/EDA/blob/master/files/dge17.cpp)
+- [dge17 - Curva cóncava](https://github.com/javimv36/EDA/blob/master/files/dge17.cpp)
 - [Creciente por los pelos](https://github.com/javimv36/EDA/blob/master/files/feb17-2.cpp)
 
 ---

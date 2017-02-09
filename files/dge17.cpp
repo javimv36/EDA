@@ -1,5 +1,10 @@
 /*
-Perfil de una curva concava
+LICENSE:
+Esta obra está bajo una licencia de Creative Commons Reconocimiento 4.0 Internacional.
+http://creativecommons.org/licenses/by/4.0/
+
+
+  Perfil de una curva concava
 
   Dados una serie de valores cuyo perfil se ajusta al de una curva concava,
   es decir decrecen hasta undeterminado valor a partir del cual son crecientes,
