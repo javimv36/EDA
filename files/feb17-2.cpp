@@ -22,21 +22,23 @@ diferencia entre un elemento y el elemento siguiente es como mucho 1.
 #include <algorithm>
 #define MAX 1000
 using namespace std;
+#define DYV 0
+#define DYVONELINE 1
 
-bool solve(int V[], int n){
-  if (n==2)
-    return (V[0]==V[1]||V[0]==V[1]-1);
-  else if (n==3)
-    return ((V[0]==V[1]||V[0]==V[1]-1)&&(V[1]==V[2]||V[1]==V[2]-1));
-  else{
-    int d1=((V[n/2-1])-V[0]);
-    int d2=(V[n]-(V[n/2]));
-    if (d2>d1){
-      return solve(V+(n/2), (n-(n/2)));
-    }
-    else return solve(V,(n/2));
+#if DYV
+  bool solve(int V[], int n){
+    if (n==2)
+      return((V[0]==V[1])||((V[0]+1)==V[1]));
+    else if (n==3)
+      return(((V[0]==V[1])||((V[0]+1)==V[1]))&&((V[1]==V[2])||((V[1]+1)==V[2])));
+    else
+      return ((solve(V,(n/2))) && (solve(V+(n/2), (n-(n/2)))));
   }
-}
+#elif DYVONELINE
+  bool solve(int V[], int n){
+    return ((n==2)?((V[0]==V[1])||((V[0]+1)==V[1])):((n==3)?(((V[0]==V[1])||((V[0]+1)==V[1]))&&((V[1]==V[2])||((V[1]+1)==V[2]))):((solve(V,(n/2))) && (solve(V+(n/2), (n-(n/2)))))));
+  }
+#endif
 
 int main(){
   int c;
