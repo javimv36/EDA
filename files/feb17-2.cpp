@@ -18,27 +18,19 @@ diferencia entre un elemento y el elemento siguiente es como mucho 1.
 #define MAX 1000
 using namespace std;
 
-/*
-bool solve(int V[], int n){
-  if ((V[n-1]-V[0])>=n)return false;
-  else{
-    return true;
-  }
-}
-*/
-
 bool solve(int V[], int n){
   if (n==2)
     return (V[0]==V[1]||V[0]==V[1]-1);
   else if (n==3)
     return ((V[0]==V[1]||V[0]==V[1]-1)&&(V[1]==V[2]||V[1]==V[2]-1));
-  else
-      return
-      ((V[n/2]==V[(n/2)-1]||V[n/2]==V[(n/2)-1]-1)
-      &&
-      (solve(V,(n/2)))
-      &&
-      (solve(V+(n/2), (n-(n/2)))));
+  else{
+    int d1=((V[n/2-1])-V[0]);
+    int d2=(V[n]-(V[n/2]));
+    if (d2>d1){
+      return solve(V+(n/2), (n-(n/2)));
+    }
+    else return solve(V,(n/2));
+  }
 }
 
 int main(){
