@@ -31,3 +31,24 @@ Ejemplos:
   4-divertido
     9 9 9 9
 */
+#include <iostream>
+#define MAX 1000
+using namespace std;
+
+bool solve(int n, int d, int V[]){
+  int i;
+  int C[MAX];
+  for(i=1; (((V[i]==V[(i-1)])||(V[i]==V[i-1]+1))&&(V[i]!=V[(i+d)])&&(i<n));i++);//me salgo del vector por la derecha
+  return (i>=n-1);
+}
+
+int main(){
+  int n;
+  int d;
+  int V[MAX];
+  cin >> d;
+  cin >> n;
+  for (int i=0;i<n;i++)cin >> V[i];
+  cout << ((solve(n,d,V))?"SI":"NO") << endl;
+  return 0;
+}
