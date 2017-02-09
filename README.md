@@ -53,10 +53,6 @@ Informática de la UCM.
   1. [Suma parejas multiplicativas](https://github.com/javimv36/EDA/blob/master/files/feb15-1.cpp)
   - [Números especulares](https://github.com/javimv36/EDA/blob/master/files/feb15-2.cpp)
   - [Productos dieta](https://github.com/javimv36/EDA/blob/master/files/feb15-3.cpp)
-- Febrero 2016
-  1. [Ejercicio 1]()
-  2. [Ejercicio 2]()
-  3. [Ejercicio 3]()
 - Febrero 2017 (09/02/2017)
   1. [Creciente por los pelos y d-divertido](https://github.com/javimv36/EDA/blob/master/files/feb17-1.cpp)
   2. [Creciente por los pelos](https://github.com/javimv36/EDA/blob/master/files/feb17-2.cpp)
