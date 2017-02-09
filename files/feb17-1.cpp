@@ -1,4 +1,12 @@
 /*
+1. (4 puntos) Especifica, diseña e impelmenta una funcion que reciba un vector de enteros
+de longitud 0<=n<=1000 y un parametro d>0 y devuelva si el vector es creciente por
+los pelos y d-divertido. Escribe el invariante y funcion de cota que permitan demostrar
+la correccion del algoritmo conseguido.
+
+La entrada comienza con una linea que contiene el numero de casos de prueba. Cada caso de
+prueba contendrá los valores d y n y los elementos del vector. El programa escribirá SI si
+es creciente por los pelos y d-divertido y NO en caso contrario.
 
 NOTA:
 Un vector es CRECIENTE POR LOS PELOS cuando a demas de ser creciente, la
