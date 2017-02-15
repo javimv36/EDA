@@ -57,9 +57,9 @@ Informática de la UCM.
   1. [Creciente por los pelos y d-divertido](https://github.com/javimv36/EDA/blob/master/files/feb17-1.cpp)
   2. [Creciente por los pelos](https://github.com/javimv36/EDA/blob/master/files/feb17-2.cpp)
   3. [Genera creciente por los pelos y d-divertido](https://github.com/javimv36/EDA/blob/master/files/feb17-3.cpp)
-  - Febrero 2017 (10/02/2017)
-    1. [Particion positivos y negativos](https://github.com/javimv36/EDA/blob/master/files/feb17-1-C.cpp)
-    2. [Todos los elementos repetidos 2 veces menos unos](https://github.com/javimv36/EDA/blob/master/files/feb17-2-C.cpp)
+- Febrero 2017 (10/02/2017)
+  1. [Particion positivos y negativos](https://github.com/javimv36/EDA/blob/master/files/feb17-1-C.cpp)
+  2. [Todos los elementos repetidos 2 veces menos unos](https://github.com/javimv36/EDA/blob/master/files/feb17-2-C.cpp)
 
 
 ---
