@@ -48,7 +48,11 @@ Informática de la UCM.
 - [Genera creciente por los pelos y d-divertido](https://github.com/javimv36/EDA/blob/master/files/feb17-3.cpp)
 
 ---
-## 5. Ejercicios examen
+## 5. Tipos Abstractos de Datos
+- [TAD: Conjunto de enteros](https://github.com/javimv36/EDA/blob/master/files/conjunto/SetOfInts.cpp)
+
+---
+## Ejercicios examen
 - Febrero 2015
   1. [Suma parejas multiplicativas](https://github.com/javimv36/EDA/blob/master/files/feb15-1.cpp)
   - [Números especulares](https://github.com/javimv36/EDA/blob/master/files/feb15-2.cpp)
