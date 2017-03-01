@@ -34,7 +34,7 @@ int pruebas2(){
 void solve(int V[],int numElems, SetOfInts3& s){
 	
 	for(int i=0; i< numElems; i++){
-		if(numK == 1 || pos == numK - 1){
+		if(numElems == 1 || pos == numElems - 1){
 			cout << s.getMin();
 		}else{
 			cout << s.getMin() << " ";
