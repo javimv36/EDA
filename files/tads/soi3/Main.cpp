@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 #define MAX 10000
-#include <stdlib.h> 
+#include <stdlib.h>
 int pruebas1(){
 	SetOfInts3 *s =  new SetOfInts3();
 	SetOfInts3 *s2 =  new SetOfInts3();
@@ -32,9 +32,9 @@ int pruebas2(){
 }
 
 void solve(int V[],int numElems, SetOfInts3& s){
-	
+
 	for(int i=0; i< numElems; i++){
-		if(numElems == 1 || pos == numElems - 1){
+		if(numElems == 1 || i == numElems - 1){
 			cout << s.getMin();
 		}else{
 			cout << s.getMin() << " ";
@@ -59,11 +59,9 @@ int main(){
 			i++;
 			cin >> n;
 		}
-		solve(V,numElems, *s); 
+		solve(V,numElems, *s);
 		delete s;
 		cin >> numElems;
 	}
     return 0;
 }
-
-

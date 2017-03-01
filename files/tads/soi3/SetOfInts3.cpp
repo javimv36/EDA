@@ -142,3 +142,11 @@ bool SetOfInts3::operator<(const SetOfInts3& s)const{
 	}
 	return true;
 }
+
+void SetOfInts3::removeMin(){
+	remove(elems[0]);
+}
+
+int SetOfInts3::getMin() const{
+	return elems[0];
+}
