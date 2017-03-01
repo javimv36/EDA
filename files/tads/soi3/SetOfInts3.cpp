@@ -126,3 +126,19 @@ void SetOfInts3::shiftLeftFrom(int i){
 	for (; i < size-1; i++)
 		elems[i] = elems[i+1];
 }
+
+bool SetOfInts3::operator==(const SetOfInts3& s)const{
+	if(size == s.size){
+		for(int i=0; i<size; i++){
+			if(elems[i]!=s.elems[i]) return false;
+		}
+	}
+	return true;
+}
+
+bool SetOfInts3::operator<(const SetOfInts3& s)const{
+	for( int i =0; i < size; i++){
+		if(!(s.contains(elems[i])))return false;
+	}
+	return true;
+}
