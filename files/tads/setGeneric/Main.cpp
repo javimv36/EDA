@@ -5,7 +5,7 @@
 using namespace std;
 
 
-void solve(int numElems, Set<>& s){
+void solve(int numElems, Set<T>& s){
 	int n = s.getSize();
 	while(n>numElems){
 		s.removeMin();
@@ -24,10 +24,11 @@ int main(){
 	int numElems;
 	int V[MAX];
 	cin >> c;
-	Set<> *s = new Set();
+	
 	while(!cin.fail()){
 		cin >> numElems;
 		if(c=='N'){
+		Set<int> *s = new Set();
 			int entrada;
 			cin >> entrada;
 			while(entrada != -1){
@@ -35,6 +36,7 @@ int main(){
 				cin >> entrada;
 			}
 		}else if(c=='P'){
+		Set<string> *s = new Set();
 			string entrada;
 			cin >> entrada;
 			while(entrada != "FIN"){
