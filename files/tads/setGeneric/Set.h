@@ -36,9 +36,9 @@ class Set {
 		void erase();
 		void write(ostream& sOut);
 		void read(istream& sIn);
-		int getMin() const;
+		T getMin() const;
 		void removeMin();
-		int getMax() const;
+		T getMax() const;
 		void removeMax();
 		int getSize() const;
 };
@@ -217,23 +217,23 @@ void Set<T>::reallocate(){
 }
 
 template<class T>
-int Set<T>::getMin()const{
+T Set<T>::getMin()const{
 	return elems[0];
 }
 
 template<class T>
 void Set<T>::removeMin(){
-	remove(0);
+	remove(getMin());
 }
 
 template<class T>
-int Set<T>::getMax()const{
+T Set<T>::getMax()const{
 	return elems[size-1];
 }
 
 template<class T>
 void Set<T>::removeMax(){
-	remove(size-1);
+	remove(getMax());
 }
 template<class T>
 int Set<T>::getSize()const{

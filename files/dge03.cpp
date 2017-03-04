@@ -32,40 +32,39 @@ Salida de ejemplo
 3
 4
 */
-#include <iostream>
+#include <iostream>    // cin, cout
+#include <algorithm>  // max
+#include <limits>
 using namespace std;
-#define MAX 100000
 
-int min(int a, int b){return (a<b)?a:b;}
-int max(int a, int b){return (a>b)?a:b;}
-
-bool menores (int a[], int n, int p){
-  int u,w;
-  for (u=0; u>=p; u++){
-    for(w=p+1; w<n; w++)
-    if (!(a[u] < a[w]))return false;
-  }
-  return true;
+#define MAX 10000
+  
+int solve(int V[], int N){
+	int p = 0, n = 1, m = V[0], s = V[0];
+	while ( n < N ){
+		s = max(s, V[n]);
+		if (V[n] <= m){
+			p = n;
+			m = max( m, s);
+		}
+		n++;
+	}
+    return p;
 }
 
-int solve(int a[], int n){
-	int p;
-	for(p=0; p<n && !(menores(a,n,p));p++){
-    for(int j=0; j<p; j++){
-     if (!menores(a,n,j))break;
-    }
-  }
-  return p;
-}
 
 int main(int argc, char **argv){
-	int N;
-	int n;
-	int V[MAX];
-	cin >> n;
-	for(n;n>0;n--){
-		cin>>N;
-		for(int i=0; i<N; i++)cin>>V[i];
-		cout << solve(V, N) << endl;
-	}
+    int n,
+        N,
+        A[MAX];
+
+    cin >> n;
+    for (int i=0; i < n ; i++){
+        cin >> N ;
+        for (int j=0; j < N ; j++){
+            cin >> A[j];
+        }
+		cout << solve(A,N) << endl;
+    }
+    return 0;
 }

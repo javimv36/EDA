@@ -4,14 +4,14 @@
 #include <stdlib.h>
 using namespace std;
 
-
+template<class T>
 void solve(int numElems, Set<T>& s){
 	int n = s.getSize();
 	while(n>numElems){
 		s.removeMin();
 		n--;
 	}
-	while(n >= 0){
+	while(n > 0){
 		cout << s.getMin() << " ";
 		s.removeMin();
 		n--;
@@ -24,30 +24,31 @@ int main(){
 	int numElems;
 	int V[MAX];
 	cin >> c;
-	
 	while(!cin.fail()){
 		cin >> numElems;
 		if(c=='N'){
-		Set<int> *s = new Set();
+			Set<int> *s = new Set<int>();
 			int entrada;
 			cin >> entrada;
 			while(entrada != -1){
 				s->add(entrada);
 				cin >> entrada;
 			}
-		}else if(c=='P'){
-		Set<string> *s = new Set();
+			solve(numElems, *s);
+			delete s;
+		}else {
+			Set<string> *s = new Set<string>();
 			string entrada;
 			cin >> entrada;
 			while(entrada != "FIN"){
 				s->add(entrada);
 				cin >> entrada;
 			}
-
+			solve(numElems, *s);
+			delete s;
 		}
-		solve(numElems, *s);
+
 		cin >> c;
 	}
-	delete s;
-    return 0;
+  return 0;
 }
