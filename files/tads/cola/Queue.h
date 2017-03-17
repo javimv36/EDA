@@ -46,14 +46,17 @@ public:
 	}
 
 	void jump(const T pringao, Queue<T> &colegas ){
+		bool encontrado = false;
 		Nodo *p1 = _prim;
 		while(p1!=NULL && p1->_elem!=pringao){
 			p1 = p1->_sig;
 		}
-		colegas._ult = p1->_sig;
-		p1->_sig = colegas._prim;
-		colegas._prim=NULL;
-		colegas._ult=NULL;
+		if(p1->_elem==pringao){
+			colegas._ult->_sig = p1->_sig;	
+			p1 = colegas._prim;
+			colegas._prim=NULL;
+			colegas._ult=NULL;
+		}
 	}
 
 	/**
