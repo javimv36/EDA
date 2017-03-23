@@ -1,3 +1,4 @@
+#include "Error.h"
 class Hora {
 	// Conjuntos de enteros representados como vectores ordenados sin repeticiones
 	private:
@@ -15,10 +16,11 @@ class Hora {
 
 	public:
 		Hora();
-		void add(int x) throw (Error);
-		void remove(int x);
-		friend istream& operator>>(istream& sIn,SetOfInts3& set);
-		friend ostream& operator<<(ostream& sOut,SetOfInts3& set);
-		bool operator==(const SetOfInts3& s)const;
-		bool operator<(const SetOfInts3& s)const;
+		void setHora(int h, int m, int s) throw (Error);
+		void write(ostream &sOut);
+		friend istream& operator>>(istream& sIn,Hora& hora);
+		friend ostream& operator<<(ostream& sOut,Hora& hora);
+		/*bool operator==(const SetOfInts3& s)const;
+		bool operator<(const Hora& hora)const;
+		*/
 };
