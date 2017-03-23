@@ -18,9 +18,14 @@ class Hora {
 		Hora();
 		void setHora(int h, int m, int s) throw (Error);
 		void write(ostream &sOut);
+		int getHH() const;
+		int getMM() const;
+		int getSS() const;
+		bool operator<(const Hora& hora)const;
 		friend istream& operator>>(istream& sIn,Hora& hora);
 		friend ostream& operator<<(ostream& sOut,Hora& hora);
+		
 		/*bool operator==(const SetOfInts3& s)const;
-		bool operator<(const Hora& hora)const;
+		
 		*/
 };

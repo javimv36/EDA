@@ -5,9 +5,9 @@ using namespace std;
 
 Hora::Hora()
 {
-    _horas = 0;
-    _minutos = 0;
-    _segundos = 0;
+    _horas = 00;
+    _minutos = 00;
+    _segundos = 00;
 }
 
 void Hora::write(ostream &sOut)
@@ -25,6 +25,47 @@ void Hora::setHora(int h, int m, int s) throw(Error)
     }
     else
         throw Error("Error");
+}
+
+int Hora::getHH() const
+{
+    return _horas;
+}
+int Hora::getMM() const
+{
+    return _minutos;
+}
+int Hora::getSS() const
+{
+    return _segundos;
+}
+
+bool Hora::operator<(const Hora &hora) const
+{
+    if (getHH() < hora.getHH())
+    {
+        return true;
+    }
+    else if (getHH() == hora.getHH())
+    {
+        if (getMM() < hora.getMM())
+        {
+            return true;
+        }
+        else if (getMM() == hora.getMM())
+        {
+            if (getSS() < hora.getSS())
+            {
+                return true;
+            }
+            else
+                return false;
+        }
+        else
+            return false;
+    }
+    else
+        return false;
 }
 
 ostream &operator<<(ostream &sOut, Hora &hora)
