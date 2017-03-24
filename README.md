@@ -49,7 +49,7 @@ Informática de la UCM.
 
 ---
 ## 5. Tipos Abstractos de Datos
-- [TAD: Conjunto de enteros](https://github.com/javimv36/EDA/blob/master/files/conjunto/SetOfInts.cpp)
+- [TAD: Conjunto de enteros](https://github.com/javimv36/EDA/blob/master/files/conjunto)
 
 - [TAD: Conjunto de enteros con operadores << y >> redefinidos](https://github.com/javimv36/EDA/tree/master/files/tads/soi3)
 - [TAD: Conjunto genérico](https://github.com/javimv36/EDA/tree/master/files/tads/setGeneric)
@@ -62,16 +62,16 @@ Informática de la UCM.
 ---
 ## Ejercicios examen
 - Febrero 2015
-  1. [Suma parejas multiplicativas](https://github.com/javimv36/EDA/blob/master/files/feb15-1.cpp)
+  - [Suma parejas multiplicativas](https://github.com/javimv36/EDA/blob/master/files/feb15-1.cpp)
   - [Números especulares](https://github.com/javimv36/EDA/blob/master/files/feb15-2.cpp)
   - [Productos dieta](https://github.com/javimv36/EDA/blob/master/files/feb15-3.cpp)
 - Febrero 2017 (09/02/2017)
-  1. [Creciente por los pelos y d-divertido](https://github.com/javimv36/EDA/blob/master/files/feb17-1.cpp)
-  2. [Creciente por los pelos](https://github.com/javimv36/EDA/blob/master/files/feb17-2.cpp)
-  3. [Genera creciente por los pelos y d-divertido](https://github.com/javimv36/EDA/blob/master/files/feb17-3.cpp)
+  - [Creciente por los pelos y d-divertido](https://github.com/javimv36/EDA/blob/master/files/feb17-1.cpp)
+  - [Creciente por los pelos](https://github.com/javimv36/EDA/blob/master/files/feb17-2.cpp)
+  - [Genera creciente por los pelos y d-divertido](https://github.com/javimv36/EDA/blob/master/files/feb17-3.cpp)
 - Febrero 2017 (10/02/2017)
-  1. [Particion positivos y negativos](https://github.com/javimv36/EDA/blob/master/files/feb17-1-C.cpp)
-  2. [Todos los elementos repetidos 2 veces menos unos](https://github.com/javimv36/EDA/blob/master/files/feb17-2-C.cpp)
+  - [Particion positivos y negativos](https://github.com/javimv36/EDA/blob/master/files/feb17-1-C.cpp)
+  - [Todos los elementos repetidos 2 veces menos unos](https://github.com/javimv36/EDA/blob/master/files/feb17-2-C.cpp)
 
 
 ---
