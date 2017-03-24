@@ -94,7 +94,7 @@ public:
 
 	void removeAll(const T &elem){
 		Nodo* avance = _prim;
-		while (avance->_sig != NULL){
+		while (avance != NULL){
 			if(avance->_elem == elem){
 				if(avance->_ant == NULL){
 					pop_front();
@@ -104,10 +104,11 @@ public:
 					avance->_ant->_sig = avance->_sig;
 					avance->_sig->_ant = avance->_ant;
 				}
-				delete avance;
 				_numElems--;
 			}
+			avance = avance->_sig;
 		} 
+		delete avance;
 	}
 
 	/**
