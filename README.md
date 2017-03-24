@@ -51,10 +51,10 @@ Informática de la UCM.
 ## 5. Tipos Abstractos de Datos
 - [TAD: Conjunto de enteros](https://github.com/javimv36/EDA/blob/master/files/conjunto/SetOfInts.cpp)
 
-- [TAD: Conjunto de enteros con operadores << y >> redefinidos] (https://github.com/javimv36/EDA/tree/master/files/tads/soi3)
+- [TAD: Conjunto de enteros con operadores << y >> redefinidos](https://github.com/javimv36/EDA/tree/master/files/tads/soi3)
 - [TAD: Conjunto genérico](https://github.com/javimv36/EDA/tree/master/files/tads/setGeneric)
 
-- [TAD: cola] (https://github.com/javimv36/EDA/tree/master/files/tads/cola)
+- [TAD: cola](https://github.com/javimv36/EDA/tree/master/files/tads/cola)
 
 - [TAD: hora](https://github.com/javimv36/EDA/tree/master/files/tads/horaTren)
 
