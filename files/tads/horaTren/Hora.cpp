@@ -12,10 +12,10 @@ Hora::Hora()
 
 void Hora::write(ostream &sOut)
 {
-    sOut << ((_horas<10)?("0"):("")) << _horas << ":" << ((_minutos<10)?("0"):("")) << _minutos << ":" << ((_segundos<10)?("0"):("")) << _segundos << std::endl;
+    sOut << ((_horas < 10) ? ("0") : ("")) << _horas << ":" << ((_minutos < 10) ? ("0") : ("")) << _minutos << ":" << ((_segundos < 10) ? ("0") : ("")) << _segundos << endl;
 }
 
-void Hora::setHora(int h, int m, int s) throw(Error)
+void Hora::setHora(int h, int m, int s)
 {
     if (0 <= h && h <= 23 && 0 <= m && m <= 59 && 0 <= s && s <= 59)
     {
@@ -23,8 +23,6 @@ void Hora::setHora(int h, int m, int s) throw(Error)
         _minutos = m;
         _segundos = s;
     }
-    else
-        throw Error("Error");
 }
 
 int Hora::getHH() const
@@ -70,11 +68,11 @@ bool Hora::operator<(const Hora &hora) const
 
 ostream &operator<<(ostream &sOut, Hora &hora)
 {
-    hora.write(sOut);
+        hora.write(sOut);
     return sOut;
 }
 
-istream &operator>>(istream &sIn, Hora &hora)
+istream &operator>>(istream &sIn, Hora &hora) throw (Error)
 {
     int h, m, s;
     char c;
@@ -83,7 +81,13 @@ istream &operator>>(istream &sIn, Hora &hora)
     sIn >> m;
     sIn.get(c);
     sIn >> s;
-    hora.setHora(h, m, s);
+if (0 <= h && h <= 23 && 0 <= m && m <= 59 && 0 <= s && s <= 59)
+    {
+         hora.setHora(h, m, s);
+    }
+    else
+        throw Error("Error");
+   
     return sIn;
 }
 //tema8 FP

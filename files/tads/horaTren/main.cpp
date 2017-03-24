@@ -2,6 +2,7 @@
 #include "Hora.h"
 #define MAX 10000
 using namespace std;
+#include "Error.h"
 
 int solve(Hora V[], int nTrenes, Hora consulta)
 {
@@ -28,12 +29,19 @@ int main()
 
         for (int i = 0; i < nConsultas; i++)
         {
-            cin >> consulta;
-            pos = solve(V, nTrenes, consulta);
-            if (pos < nTrenes)
-                cout << V[pos];
-            else
-                cout << "NO" << endl;
+            try
+            {
+                cin >> consulta;
+                pos = solve(V, nTrenes, consulta);
+                if (pos < nTrenes)
+                    cout << V[pos];
+                else
+                    cout << "NO" << endl;
+            }
+            catch (Error e)
+            {
+                cout << e.getMessage() << endl;
+            }
         }
         cout << "---" << endl;
         cin >> nTrenes;
