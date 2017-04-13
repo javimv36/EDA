@@ -13,7 +13,7 @@ class Hora
     int getHH() const;
     int getMM() const;
     int getSS() const;
-    Hora operator+(const Hora &hora) throw (Error);
+    Hora& operator+(const Hora &hora) throw (Error);
     bool operator<(const Hora &hora) const;
     friend istream &operator>>(istream &sIn, Hora &hora) throw (Error);
     friend ostream &operator<<(ostream &sOut, Hora &hora);

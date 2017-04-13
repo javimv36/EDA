@@ -1,57 +1,39 @@
 #include <iostream>
-#include "Hora.h"
 #define MAX 10000
 using namespace std;
 #include "Error.h"
+#include "pelicula.h"
 
-int solve(Hora V[], int nTrenes, Hora consulta)
+int solve(Pelicula V[], int n)
 {
-    int i;
-    for (i = 0; i <= nTrenes && V[i] < consulta; i++);
-    return i;
+    try
+    {
+    }
+    catch (Error e)
+    {
+        cout << e.getMessage() << endl;
+    }
+    return 0;
 }
 
 int main()
 {
-    int nTrenes, nConsultas;
-    Hora V[MAX];
-    Hora consulta;
-    Hora consulta2;
+    int n;
+    Pelicula V[MAX];
     int pos;
-    cin >> nTrenes;
-    cin >> nConsultas;
-    while (nTrenes != 0 || nConsultas != 0)
+    cin >> n;
+    while (n != 0)
     {
-        cin << consulta;
-        cin << consulta2;
-        cout << consulta+consulta2 << endl;
-       /*
-        for (int i = 0; i < nTrenes; i++)
+        for (int i = 0; i < n; i++)
         {
             cin >> V[i];
         }
-
-        for (int i = 0; i < nConsultas; i++)
+        //solve(V, n);
+        for (int i = 0; i < n; i++)
         {
-            try
-            {
-                cin >> consulta;
-                pos = solve(V, nTrenes, consulta);
-                if (pos < nTrenes)
-                    cout << V[pos];
-                else
-                    cout << "NO" << endl;
-            }
-            catch (Error e)
-            {
-                cout << e.getMessage() << endl;
-            }
+            cout << V[i];
         }
-        
         cout << "---" << endl;
-        cin >> nTrenes;
-        cin >> nConsultas;
-        */
     }
     return 0;
 }

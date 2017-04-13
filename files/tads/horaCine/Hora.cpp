@@ -38,25 +38,23 @@ int Hora::getSS() const
     return _segundos;
 }
 
-Hora operator+(const Hora &hora) throw Error{
-    int h=0,m=0,s=0;
-    h=getHH()+hora.getHH();
-    m=getMM()+hora.getMM();
-    s=getSS()+hora.getSS();
-    if(s>60){
+Hora& Hora::operator + (const Hora &hora) throw (Error){
+    int h=this->_horas+hora.getHH();
+    int m=this->_minutos+hora.getMM();
+    int s=this->_segundos+hora.getSS();
+    if(s>=60){
         m+=(s/60);
         s%=60;
     }
-    if(m>60){
+    if(m>=60){
         h+=(m/60);
         m%=60;
     }
-    if(h>24){
+    if(h>=24){
        throw Error("Error");
     }
-    Hora hour = new Hora();
-    hour.setHora(h,m,s);
-    return hour;
+    this->setHora(h,m,s);
+    return *this;
 }
 
 bool Hora::operator<(const Hora &hora) const
