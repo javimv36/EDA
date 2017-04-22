@@ -54,7 +54,7 @@ Informática de la UCM.
 - [Conjunto genérico](https://github.com/javimv36/EDA/tree/master/files/tads/setGeneric)
 - [Cola](https://github.com/javimv36/EDA/tree/master/files/tads/cola)
 - [Hora](https://github.com/javimv36/EDA/tree/master/files/tads/horaTren)
-- [Árbol binario rescate en la montaña](https://github.com/javimv36/EDA/master/files/tads/arbin)
+- [Árbol binario rescate en la montaña](https://github.com/javimv36/EDA/tree/master/files/tads/arbin)
 
 
 ---
