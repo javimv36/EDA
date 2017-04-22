@@ -43,10 +43,13 @@ bool Pelicula::operator<(const Pelicula &p) const
 istream &operator>>(istream &sIn, Pelicula &p)
 {
     Hora inicio, duracion;
-    string nombre="";
+    string nombre;
+    char c;
     sIn >> inicio;
     sIn >> duracion;
     sIn >> nombre;
+    sIn.get(c);
+    getline(sIn, nombre);
     p.setDatos(inicio, duracion, nombre);
     return sIn;
 }
