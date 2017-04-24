@@ -4,15 +4,17 @@ using namespace std;
 
 Pelicula::Pelicula()
 {
-    _horaInicio.setHora(0,0,0);
-    _duracion.setHora(0,0,0);
-    _nombre ="";
+    _horaInicio.setHora(0, 0, 0);
+    _horaFin.setHora(0,0,0);
+    _duracion.setHora(0, 0, 0);
+    _nombre = "";
 }
 
 void Pelicula::setDatos(Hora horaInicio, Hora duracion, string nombre)
 {
     _horaInicio = horaInicio;
     _duracion = duracion;
+    _horaFin = horaInicio + duracion;
     _nombre = nombre;
 }
 
@@ -31,6 +33,11 @@ Hora Pelicula::getDuracion() const
     return _duracion;
 }
 
+Hora Pelicula::getFin() const
+{
+    return _horaFin;
+}
+
 string Pelicula::getNombre() const
 {
     return _nombre;
@@ -47,7 +54,6 @@ istream &operator>>(istream &sIn, Pelicula &p)
     char c;
     sIn >> inicio;
     sIn >> duracion;
-    sIn >> nombre;
     sIn.get(c);
     getline(sIn, nombre);
     p.setDatos(inicio, duracion, nombre);

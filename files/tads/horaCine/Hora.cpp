@@ -12,7 +12,7 @@ Hora::Hora()
 
 void Hora::write(ostream &sOut)
 {
-    sOut << ((_horas < 10) ? ("0") : ("")) << _horas << ":" << ((_minutos < 10) ? ("0") : ("")) << _minutos << ":" << ((_segundos < 10) ? ("0") : ("")) << _segundos << endl;
+    sOut << ((_horas < 10) ? ("0") : ("")) << _horas << ":" << ((_minutos < 10) ? ("0") : ("")) << _minutos << ":" << ((_segundos < 10) ? ("0") : ("")) << _segundos;
 }
 
 void Hora::setHora(int h, int m, int s)
