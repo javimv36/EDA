@@ -45,6 +45,16 @@ string Pelicula::getNombre() const
 
 bool Pelicula::operator<(const Pelicula &p) const
 {
+    if(this->_horaFin < p.getFin()){
+        return true;
+    }
+    if(this->_horaFin == p.getFin()){
+        if(this->_nombre < p.getNombre()){
+            return true;
+        }
+        else return false;
+    }else
+    return false;
 }
 
 istream &operator>>(istream &sIn, Pelicula &p)

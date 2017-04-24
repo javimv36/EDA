@@ -85,6 +85,11 @@ bool Hora::operator<(const Hora &hora) const
         return false;
 }
 
+bool Hora::operator==(const Hora &hora) const
+{
+    if (getHH() == hora.getHH()&&getMM() == hora.getMM()&&getSS() == hora.getSS())return true;
+    else return false;
+}
 ostream &operator<<(ostream &sOut, Hora &hora)
 {
         hora.write(sOut);
