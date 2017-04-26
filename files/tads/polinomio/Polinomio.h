@@ -1,9 +1,11 @@
 #include "Error.h"
+#include <iostream>
 
 // Un polinomio en una variable es una expresion matematica de la
 // forma P(x) = anxn + an−1x n−1 + ... + a1x 1 + a0x 0. 
 // Las constantes (a0,...,an) se llaman los coeficientes del polinomio 
 // y los valores  (0..n)                los exponentes (numero naturales). 
+// Se puede deducir que el exponente es la posicion en el vector de conocimientos.
 
 // Cada una de las sumas aixi se denomina un monomio. 
 
@@ -15,34 +17,40 @@
 
 class Polinomio
 {
-  private:
+private:
+	static const int MAXNUMCOEF = 10;
 	// El grado del polinomio es el del monomio de mayor grado.
-    int _grado;
-	extern int _coeficientes[];
+	int _grado;
+	int _coeficientes[MAXNUMCOEF];
 
-  public:
-    // Constructor del polinomio
-    polinomio();
+public:
+	// Constructor del polinomio
+	Polinomio();
+
 	// Constructor con argumentos
-	polinomio(int gr, int[] &v);
-	// Constructor con grado
-	polinomio(int gr);
+	Polinomio(int gr);
+	//polinomio(int gr, int[] &v);
+
 	// Modificar el polinomio
-    void setPolinomio(int gr, int[] v);
+	//void setPolinomio(int gr, int[] v);
+	void setMonomio(int i, int num);
+	void setGrado(int gr);
 	// Escribir un polinomio
-    void write(ostream &sOut);
+	void write(ostream &sOut);
 	// Obtener el grado del polinomio
-    int getGr() const;
+	int getGrado() const;
+	
 	// Obtener los coeficientes
-    void getCoef(int &v[]) const;
+	int getCoef(int gr) const;
+	
 	// Operador comparacion (igualdad) de un polinomio
 	bool operator==(const Polinomio &polinomio) const;
 	// Operador comparacion (menor que) de un polinomio
-    bool operator<(const Polinomio &polinomio) const;
+	bool operator<(const Polinomio &polinomio) const;
 	// Operador suma de un polinomio
 	bool operator+(const Polinomio &polinomio) const;
 	// Operador para insertar un polinomio
-    friend istream &operator>>(istream &sIn, Polinomio &polinomio) throw (Error);
+	friend istream &operator >> (istream &sIn, Polinomio &polinomio) throw (Error);
 	// Operador para mostrar un polinomio
-    friend ostream &operator<<(ostream &sOut, Polinomio &polinomio);
+	friend ostream &operator<<(ostream &sOut, Polinomio &polinomio);
 };
