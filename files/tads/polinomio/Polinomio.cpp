@@ -47,11 +47,11 @@ istream &operator >> (istream &sIn, Polinomio &polinomio) throw (Error)
 	int gr;
 	sIn >> gr;
 	polinomio.setGrado(gr);
-	if (0 <= gr) {
+	if (gr > 0) {
 		int coef;
 		for (int i = 0; i < gr;i++) {
 			sIn >> coef;
-			polinomio.setMonomio(gr, coef);
+			polinomio.setMonomio(i, coef);
 		}
 	}
 	else
