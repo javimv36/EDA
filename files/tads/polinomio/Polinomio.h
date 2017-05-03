@@ -33,7 +33,7 @@ public:
 
 	// Modificar el polinomio
 	//void setPolinomio(int gr, int[] v);
-	void setMonomio(int i, int num);
+	void setMonomio(int exp, int coef);
 	void setGrado(int gr);
 	// Escribir un polinomio
 	void write(ostream &sOut);

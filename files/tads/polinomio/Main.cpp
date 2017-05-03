@@ -3,17 +3,38 @@
 using namespace std;
 #include <stdlib.h>
 
+int solve(Polinomio p, int x){
+    int solucion=0;
+    int pot=1;
+    for(int i=0; i<=p.getGrado(); i++){
+        solucion += p.getCoef(i)*pot;
+        pot*=x;
+    }
+    return solucion;
+}
+
+bool resuelve(){
+    if(!cin){
+        return false;
+    }else{
+        Polinomio polinomio = Polinomio();
+        cin >> polinomio;
+        int casos, caso;
+        cin >> casos;
+        for (int i=0; i<casos; i++){
+            cin >> caso;
+            int sol = solve(polinomio, caso);
+            cout << sol << " ";
+        }
+        cout << endl;
+        return true;
+    }
+}
+
 int main()
 {
-    Polinomio polinomio;
-    cin >> polinomio;
-    for (int i = 0; i < polinomio.getGrado(); i++)
-    {
-        int c = polinomio.getCoef(i);
-        cout << c << " ";
+    while (resuelve()){
+        
     }
-    char d = 'd';
-    cout << "Write something to exit";
-    cin >> d;
     return 0;
 }
