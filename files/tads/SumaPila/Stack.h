@@ -49,9 +49,7 @@ public:
 	~Stack() {
 		libera();
 	}
-	/*void sumaPila() {
-		cout << top();	
-	}*/
+
 	/**
 	 Apila un elemento. Operaci�n generadora.
 
@@ -150,13 +148,13 @@ public:
 		return !(*this == rhs);
 	}
 
-	/** Escribe la pila en el flujo. Se usa desde operator<< */
+	/** Escribe la pila en el flujo. Se usa desde operator<< 
 	void write(std::ostream& sOut) {
 		for (int i = _numElems-1; i >= 0; --i)
-			cout << "|" << setw(3) << _v[i] << "|" << endl;
-		cout << "|___|" << endl;
+			cout << "|" << setw(3) << _v[i] << "|" << "\n";
+		cout << "|___|" << "\n";
 	}
-
+*/
 protected:
 
 	void inicia() {
