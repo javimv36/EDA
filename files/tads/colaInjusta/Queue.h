@@ -45,7 +45,7 @@ public:
 		_prim = _ult = NULL;
 	}
 
-	Queue<int> cola_injusta(Queue<int> cola, int pos) {
+	Queue<int> cola_injusta(Queue<int> &cola, int pos) {
 		Nodo* act = cola._prim;
 		Nodo* antiguo = cola._prim;
 		int cont = 1;
@@ -54,14 +54,16 @@ public:
 			pos = cola._numElems;
 		}
 
-		while (cont < pos && _numElems > 2) {
+		if (cola._numElems > 2) {
 			act = act->_sig;
-			antiguo->_sig = act->_sig;
-			act->_sig = cola._prim;
-			cola._prim = act;
-			act = act->_sig;
-			cont++;
-		}	
+			while (cont < pos) {
+				antiguo->_sig = act->_sig;
+				act->_sig = cola._prim;
+				cola._prim = act;
+				act = antiguo->_sig;
+				cont++;
+			}
+		}
 		return cola;
 	}
 
