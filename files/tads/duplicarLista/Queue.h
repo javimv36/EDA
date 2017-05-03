@@ -50,14 +50,16 @@ public:
 	*/
 	void meDuplico(){
 		Nodo *actual = _prim;
-		Nodo *duplicado = actual;
-		while(!(actual->_sig == NULL)){
-			actual->_sig=duplicado;
-			actual = duplicado->_sig;
-			duplicado = actual;
+		if (!empty()) {
+			while (!(actual->_sig == NULL)) {
+				Nodo *duplicado = new Nodo(actual->_elem, actual->_sig);
+				actual->_sig = duplicado;
+				actual = duplicado->_sig;
+			}
+			Nodo *duplicado = new Nodo(actual->_elem, NULL);
+			actual->_sig = duplicado;
+			_ult = duplicado;
 		}
-		actual->_sig=duplicado; 
-		_ult=duplicado;
 	}
 	/**
 	 A�ade un elemento en la parte trasera de la cola.
@@ -184,13 +186,13 @@ public:
 	/** Escribe la cola en el flujo. Se usa desde operator<< */
 	void write(std::ostream& sOut) {
 		Nodo* aux = _prim;
-		sOut << "{";
+		
 		while (aux != NULL){
 			sOut << aux->_elem;
 			aux = aux->_sig;
-			if (aux != NULL) sOut << ",";
+			if (aux != NULL) sOut << " ";
 		}
-		sOut << "}\n";
+		sOut << "\n";
 	}
 
 protected:

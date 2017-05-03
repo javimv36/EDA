@@ -15,7 +15,6 @@ bool resuelve(){
             cola->push_back(n);
             cin >> n;
         }
-        cout << *cola;
         cola->meDuplico();
         cout << *cola;
         delete cola;
