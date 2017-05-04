@@ -4,64 +4,50 @@
 
 using namespace std;
 
+bool comprobarOrden(Stack<int>* pila, int* orden, int numVagones){
 
-int main() {
-	const int MAX_SIZE = 100000;
+	int cima = 0;
+	for (int i = 1; i <= numVagones; i++){
+		cima = pila->top();
+		if (cima != orden[i - 1]){
 
-	int a[MAX_SIZE];
-
-	int numElems, i = 0, aux;
-
-	bool posible = true;
-	Stack<int>* pila = new Stack<int>();
-
-	cin >> numElems;
-	if (numElems!=0) {
-		cin >> a[i];
-		pila->push(a[i]);
-		i++;
-		while (i < numElems) {
-			cin >> a[i];
-			if (a[i] < a[i - 1]) {
-				aux = a[i-1];
-				pila->pop();
-				pila->push(a[i]);
-				pila->push(a[i-1]);
-				i++;
-			}
-			else {
-				pila->push(a[i]);
-				i++;
-			}
-		}
-		for (int j = 0; j < i ; j++) {
-			if (a[j] < a[0]) {
-				aux = a[0];
-				a[j] = a[j + 1];
-				a[0] = aux;
-			}
-			for (int i = 0; i < numElems; i++) {
-				cout << "Vagon " << a[i] << " in" << endl;
-			}
-			
-		}
-		while (!pila->empty() && posible) {
-			/*cima = pila->top();
-			pila->pop();
-			cout << "Vagon " << i << " out" << endl;
-			nuevaCima = pila->top();
-			
-			if (cima == nuevaCima) {
-				pila->pop();
-			}
-			else posible = false;*/
-			pila->dehesaPila(posible);
-		}if (posible) {
-			cout << "POSSIBLE" << endl;
+			return false;
 		}
 		else{
-			cout << "IMPOSSIBLE" << endl;
+			cout << "Wagon " << cima << " out" << endl;
+			pila->pop();
 		}
 	}
+	return true;
+}
+
+int main() {
+	const int MAX_SIZE = 99999;
+	int numVagones;
+	Stack<int>* pila = new Stack<int>();
+	int orden[MAX_SIZE];
+	cin >> numVagones;
+	
+	while (numVagones != 0){	
+		for (int j = 0; j < numVagones; j++){
+			cin >> orden[j];
+		}
+		for (int i = 1; i <= numVagones; i++){
+			pila->push(i);
+			cout << "Wagon " << i << " in" << endl;
+		}
+
+		if (!pila->empty()){
+			if(comprobarOrden(pila, orden, numVagones)){
+				cout << "POSSIBLE" << endl;
+			}
+			else{
+				cout << "IMPOSSIBLE" << endl;
+			}
+		}
+		cin >> numVagones;
+	}
+	
 	return 0;
 }
+

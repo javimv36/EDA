@@ -74,25 +74,6 @@ public:
 			throw EmptyStackException("Cannot pop. The stack is empty");
 		--_numElems;
 	}
-
-	void dehesaPila(bool &posible) {
-		int cima, i=1,j=0, nuevaCima;
-		
-		while (posible) {
-			cima = top();
-			pop();
-			cout << "Wagon " << cima << " out" << endl;
-			j++;
-			nuevaCima = top();
-
-			if (cima == nuevaCima) {
-				pop();
-				posible = true;
-			}
-			else posible = false;
-		}
-		
-	}
 	/**
 	Devuelve el elemento en la cima de la pila. Operaci�n
 	observadora parcial, que falla si la pila est� vac�a.

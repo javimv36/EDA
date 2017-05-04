@@ -45,48 +45,6 @@ public:
 		_prim = _ult = NULL;
 	}
 
-	Queue<int> cola_injusta(Queue<int> &cola, int pos) {
-		Nodo* act = cola._prim;
-		Nodo* antiguo = cola._prim;
-		int cont = 1;
-
-		if (pos > cola._numElems) {
-			pos = cola._numElems;
-		}
-
-		if (cola._numElems > 2) {
-			act = act->_sig;
-			while (cont < pos) {
-				antiguo->_sig = act->_sig;
-				act->_sig = cola._prim;
-				cola._prim = act;
-				act = antiguo->_sig;
-				cont++;
-			}
-		}
-		return cola;
-	}
-
-	void jump(const T pringao, Queue<T> &colegas) {
-		bool encontrado = false;
-		Nodo *p1 = _prim;
-		while (p1 != NULL && !encontrado) {
-			if (p1->_elem == pringao) {
-				encontrado = true;
-			}
-			else {
-				p1 = p1->_sig;
-			}
-		}
-
-		if (encontrado) {
-			colegas._ult->_sig = p1->_sig;
-			p1->_sig = colegas._prim;
-			colegas._prim = NULL;
-			colegas._ult = NULL;
-		}
-
-	}
 
 	/**
 	A?ade un elemento en la parte trasera de la cola.
