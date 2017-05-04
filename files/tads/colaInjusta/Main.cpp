@@ -19,7 +19,7 @@ int main(){
 		cont++;
 		cin >> pos;
 		cout << *cola;
-		cola->cola_injusta(*cola, pos);
+		cola->cola_injusta(pos);
 		cout << *cola;
 		delete cola;
 	}
