@@ -36,6 +36,7 @@ List<int>* concatena(List<int>* l1, List<int>* l2){
 		}
 		else {
 			concatenada->push_back(it2.elem());
+			concatenada->push_back(it1.elem());
 			it2.next();
 			it1.next();
 		}
@@ -65,7 +66,7 @@ int main() {
 		cin.get(c);
 		c = cin.peek(); // Nos dice el siguiente caracter pero sin consumirlo
 		while (c != '\n') {
-			cin >> n1; // como sabemos que no viene el salto de línea leemos el siguiente entero
+			cin >> n1; // como sabemos que no viene el salto de lï¿½nea leemos el siguiente entero
 			l1->push_back(n1);
 			c = cin.peek();
 		}
