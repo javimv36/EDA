@@ -143,7 +143,7 @@ public:
 	List<T>* niveles() const {
 		List<T>* ret = new List<T>();
 
-		if (!esVacio()){
+		if (!esVacio()) {
 			Queue<Nodo*> porProcesar;
 			porProcesar.push_back(_ra);
 

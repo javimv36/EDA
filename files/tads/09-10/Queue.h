@@ -171,7 +171,7 @@ public:
 	void write(std::ostream& sOut) {
 		Nodo* aux = _prim;
 		sOut << "{";
-		while (aux != NULL){
+		while (aux != NULL) {
 			sOut << aux->_elem;
 			aux = aux->_sig;
 			if (aux != NULL) sOut << ",";

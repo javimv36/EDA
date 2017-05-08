@@ -1,75 +1,58 @@
-#include <iostream>
+﻿#include <iostream>
 #include <algorithm>
 #include "Arbin.h"
-#include <climits>
+#include "List.h"
 
 using namespace std;
 
-template <class T>
-Arbin<T> leerArbol(const T &repVacio)
+
+Arbin<char> reconstruirArbol(List<char> pre)
 {
-	T elem;
-	cin >> elem;
-	if (elem == repVacio)
-		return Arbin<T>();
-	else
+	if (pre.empty())
 	{
-		Arbin<T> hi = leerArbol(repVacio);
-		Arbin<T> hd = leerArbol(repVacio);
-		return Arbin<T>(hi, elem, hd);
+		return Arbin<char>();
 	}
-}
+	List<char>::ConstIterator it_pre = pre.cbegin();
 
-int encontrarTesoro(Arbin<int> caminos, int &minDragones){
-	int dragones_iz = INT_MAX;
-	int dragones_de = INT_MAX;
-	int entrada_iz = 0;
-	int entrada_de = 0;
-	int entrada = 0;
-	if (caminos.esVacio()){
-		return 0;
+	char raiz = pre.back();
+	List<char> pre_iz;
+	List<char> pre_dr;
+	Arbin<char> arbol;
+	while (it_pre.elem() != '.')
+	{
+		pre_iz.push_back(it_pre.elem());
+		it_pre.next();
 	}
-	if (caminos.hijoIz().esVacio() && caminos.hijoDr().esVacio()){
-		minDragones = 0;
-		return caminos.raiz();
+	it_pre.next();
+	while (it_pre.elem() != '.')
+	{
+		pre_dr.push_back(it_pre.elem());
+		it_pre.next();
 	}
-
-
-	entrada_iz = encontrarTesoro(caminos.hijoIz(), dragones_iz);
-	entrada_de = encontrarTesoro(caminos.hijoDr(), dragones_de);
-
-
-
-	if (dragones_iz <= dragones_de){
-		minDragones = dragones_iz;
-		entrada = entrada_iz;
-	}
-	else{
-		minDragones = dragones_de;
-		entrada = entrada_de;
-	}
-	if (caminos.raiz() == 1){
-		minDragones += 1;
-	}
-	return entrada;
-
-}
-
-void resuelveCaso()
-{
-	Arbin<int> caminos;
-	int entrada, minDragones;
-	caminos = leerArbol(-1); // -1 es la repr. de arbol vacio
-	entrada = encontrarTesoro(caminos, minDragones);
-	cout << entrada << endl;
+	Arbin<char> iz = reconstruirArbol(pre_iz);
+	Arbin<char> dr = reconstruirArbol(pre_dr);
+	return Arbin<char>(iz, raiz, dr);
 }
 
 int main()
 {
+	char a;
 	int numCasos;
-	cin >> numCasos;
-	for (int i = 0; i < numCasos; i++)
-		resuelveCaso();
 
+	cin >> numCasos;
+
+	for (int i = 0; i < numCasos; i++) {
+		List<char> preorden = List<char>();
+		char c;
+		cin.get(c);
+		c = cin.peek(); // Nos dice el siguiente caracter pero sin consumirlo
+		while (c != '\n') {
+			cin >> a; // como sabemos que no viene el salto de l�nea leemos el siguiente entero
+			preorden.push_back(a);
+			c = cin.peek();
+		}
+		Arbin<char> arb = reconstruirArbol(preorden);
+	}
+		
 	return 0;
 }
