@@ -1,13 +1,14 @@
+ï»¿
 
 /*
-Definición de algunas excepciones de las distintas
+Definiciï¿½n de algunas excepciones de las distintas
 implementaciones de los TADs.
 
 Estructura de Datos y Algoritmos
-Facultad de Informática
+Facultad de Informï¿½tica
 Universidad Complutense de Madrid
 
-(c) Marco Antonio Gómez Martín, 2012
+(c) Marco Antonio Gï¿½mez Martï¿½n, 2012
 */
 #ifndef __EXCEPCIONES_H
 #define __EXCEPCIONES_H
@@ -38,7 +39,7 @@ inline std::ostream &operator<<(std::ostream &out, const ExcepcionTAD &e) {
 }
 
 
-// Macro para declarar las clases de tipo excepción
+// Macro para declarar las clases de tipo excepciï¿½n
 // que heredan de ExcepcionConMensaje, para ahorrar
 // escribir muchas veces lo mismo...
 #define DECLARA_EXCEPCION(Excepcion) \
@@ -49,46 +50,46 @@ Excepcion(const std::string &msg) : ExcepcionTAD(msg) {} \
 };
 
 /**
-Excepción generada por algunas operaciones de las pilas.
+Excepciï¿½n generada por algunas operaciones de las pilas.
 */
 DECLARA_EXCEPCION(EmptyStackException);
 
 /**
-Excepción generada por algunas operaciones de las pilas.
+Excepciï¿½n generada por algunas operaciones de las pilas.
 */
 DECLARA_EXCEPCION(FullStackException);
 
 /**
-Excepción generada por algunas de las operaciones de las colas.
+Excepciï¿½n generada por algunas de las operaciones de las colas.
 */
 DECLARA_EXCEPCION(EmptyQueueException);
 
 /**
-Excepción generada por algunas operaciones de las colas dobles.
+Excepciï¿½n generada por algunas operaciones de las colas dobles.
 */
 DECLARA_EXCEPCION(EmptyDequeException);
 
 /**
-Excepción generada por algunas operaciones de las listas.
+Excepciï¿½n generada por algunas operaciones de las listas.
 */
 DECLARA_EXCEPCION(EmptyListException);
 
 /**
-Excepción generada por accesos incorrectos a las listas
-(tanto a un número de elemento incorrecto como por
+Excepciï¿½n generada por accesos incorrectos a las listas
+(tanto a un nï¿½mero de elemento incorrecto como por
 mal manejo de los iteradores).
 */
 DECLARA_EXCEPCION(InvalidAccessException);
 
 /**
-Excepción generada por algunas operaciones de los
-árboles binarios.
+Excepciï¿½n generada por algunas operaciones de los
+ï¿½rboles binarios.
 */
 DECLARA_EXCEPCION(EArbolVacio);
 
 /**
-Excepción generada por algunas operaciones de los
-diccionarios y árboles de búsqueda.
+Excepciï¿½n generada por algunas operaciones de los
+diccionarios y ï¿½rboles de bï¿½squeda.
 */
 DECLARA_EXCEPCION(EClaveErronea);
 
