@@ -74,6 +74,7 @@ public:
 			throw EmptyStackException("Cannot pop. The stack is empty");
 		--_numElems;
 	}
+
 	/**
 	Devuelve el elemento en la cima de la pila. Operaci�n
 	observadora parcial, que falla si la pila est� vac�a.
