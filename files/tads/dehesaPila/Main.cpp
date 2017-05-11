@@ -4,38 +4,34 @@
 
 using namespace std;
 
-bool comprobarOrden(Stack<int> &pila, int orden, int numVagones) {
-	int cima = 0;
-	cima = pila.top();
-	if (cima != orden) {
-		return false;
-	}
-	else {
-		pila.pop();
-		cout << "Wagon " << orden << " out" << endl;
-		return true;
-	}
-}
 
 int main() {
 	
 	int numVagones;
 	Stack<int> pila;
-	int orden;
-	bool posible = true;
-
+	int orden[100000];
+	bool posible = false;
+	int vagon_llegada = 0;
 
 	cin >> numVagones;
+
+	for (int i = 1; i <= numVagones; i++) {
+		cin >> orden[i];
+	}
+	
 	while (numVagones != 0) {
-		for (int i = 0; i < numVagones; i++) {
-			cout << "Wagon " << i + 1 << " in" << endl;
-			pila.push(i + 1);
-		}
-		for (int i = 0; i < numVagones; i++) {
-			cin >> orden;
-			if (!pila.empty() && posible) {
-				posible = comprobarOrden(pila, orden, numVagones);
+		pila = Stack<int>();
+		for (int i = 1; i <= numVagones; i++) {
+			pila.push(i);
+			cout << "Wagon " << i << " in" << endl;
+			if (pila.top() == orden[vagon_llegada]) {
+				cout << "Wagon " << pila.top() << " out" << endl;
+				pila.pop();
+				vagon_llegada++;
 			}
+		}
+		if(pila.empty() && vagon_llegada == numVagones){
+			posible = true;
 		}
 		if (posible) {
 			cout << "POSSIBLE" << endl;
@@ -43,7 +39,9 @@ int main() {
 		else {
 			cout << "IMPOSSIBLE" << endl;
 		}
-		posible = true;
+		
+		vagon_llegada = 0;
+		posible = false;
 		cin >> numVagones;
 	}
 
