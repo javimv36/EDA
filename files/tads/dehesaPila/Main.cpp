@@ -1,10 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include "Stack.h"
-
 using namespace std;
-
-
 int main() {
 	int numVagones;
 	Stack<int> pila;
@@ -21,7 +18,7 @@ int main() {
 		for (int i = 1; (i <= numVagones); i++) {
 			pila.push(i);
 			cout << "Wagon " << i << " in" << endl;
-			if (pila.top() == orden[vagon_llegada]) {
+			while (!pila.empty() && pila.top() == orden[vagon_llegada]) {
 				cout << "Wagon " << pila.top() << " out" << endl;
 				pila.pop();
 				vagon_llegada++;
