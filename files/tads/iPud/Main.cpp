@@ -9,18 +9,13 @@ using namespace std;
 #include "Exceptions.h"
 
 bool resuelve() {
-	while (true) {
-		int N;
-		cin >> N;
+	while (true) {	
 		if (!cin) return false;
-
 		string inst; Cancion s; Artista a; Duracion d;
-		
 		iPud iPud;
-
-		for (int i = 0; i < N; ++i) {
-			try {
-				cin >> inst;
+		try {
+			cin >> inst;
+			while (inst != "FIN"){
 				if (inst == "addSong") {
 					cin >> s >> a >> d;
 					iPud.addSong(s, a, d);
@@ -28,6 +23,9 @@ bool resuelve() {
 				else if (inst == "addToPlaylist") {
 					cin >> s;
 					iPud.addToPlayList(s);
+				}
+				else if (inst == "totalTime") {
+					cout << "Tiempo total " << iPud.totalTime() << '\n';
 				}
 				else if (inst == "current") {
 					cout << "Sonando " << iPud.current() << '\n';
@@ -40,18 +38,17 @@ bool resuelve() {
 					iPud.deleteSong(s);
 				}
 				else if (inst == "recent") {
-					
-					cout << "---\n";
+					cout << "----\n";
 				}
-			}
-			catch (invalid_argument e) {
-				cout << e.what() << '\n' << "---\n";
+				cin >> inst;
 			}
 		}
-		cout << "------\n";
+		catch (invalid_argument e) {
+			cout << e.what() << '\n';
+		}
+		cout << "----\n";
 	}
 }
-
 	int main() {
 		resuelve();
 		return 0;

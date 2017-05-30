@@ -19,18 +19,26 @@ void iPud::addSong(Cancion& s, Artista& a, Duracion d) {
 }
 
 void iPud::addToPlayList(Cancion& s) {
-	
-	List<Cancion>::Iterator it = listaReproduccion.begin();
-	if (!listaReproduccion.empty()) {
-		while (it.elem() != s) {
-			if (it.next() == lista) {
-				listaReproduccion.push_back(s);
-			}
-			else {
-				throw invalid_argument("ERROR addToPlaylist");
+	HashMap<Cancion, InfoCancion>::Iterator it = ipud.find(s);
+	if (it != ipud.end()) {
+		List<Cancion>::Iterator it = listaReproduccion.begin();
+		if (!listaReproduccion.empty()) {
+			while (it.elem() != s) {
+				if (it != listaReproduccion.end())  {
+					listaReproduccion.push_back(s);
+				}
+				else {
+					throw invalid_argument("ERROR addToPlaylist");
+				}
+				it.next();
 			}
 		}
-	}else listaReproduccion.push_back(s);
+		else listaReproduccion.push_back(s);
+	}
+	else
+	{
+		throw invalid_argument("ERROR addToPlaylist");
+	}
 }
 
 Cancion iPud::current() {
@@ -52,7 +60,7 @@ void iPud::play() {
 		it.value().reproducida = true;
 	}
 	else {
-		throw invalid_argument("ERROR play");
+		throw invalid_argument("No hay canciones en la lista");
 	}
 }
 
@@ -65,19 +73,32 @@ int iPud::totalTime() {
 			if (itHashMap != ipud.end()) {
 				total += itHashMap.value().duracion;
 			}
+			it.next();
 		}
 	}
-	else return total;
+	return total;
 }
 
-//List<Cancion> iPud::listaCanciones(int n) {
-//
-//}
+//¿Cómo sabemos si se ha reproducido mas o menos recientemente?
+List<Cancion> iPud::listaCanciones(int n) {
+	for (int i = 0; i < n; i++){
+		
+	
+	}
+
+}
 
 void iPud::deleteSong(Cancion& s) {
 	HashMap<Cancion, InfoCancion>::Iterator it = ipud.find(s);
+	List<Cancion>::Iterator it2 = listaReproduccion.begin();
 	if (it != ipud.end()) {
 		ipud.erase(s);
+		if (!listaReproduccion.empty()){
+			if (it2.elem() == s){
+				listaReproduccion.erase(it2);
+			}
+			else it2.next();
+		}
 	}
 	else throw invalid_argument("ERROR deleteSong");
 }

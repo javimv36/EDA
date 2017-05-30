@@ -16,7 +16,7 @@ class iPud {
 		Cancion current();
 		void play();
 		int totalTime();
-		//List<Cancion> listaCanciones(int n);
+		List<Cancion> listaCanciones(int n);
 		void deleteSong(Cancion& s);
 
 	private:
