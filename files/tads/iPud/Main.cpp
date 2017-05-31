@@ -38,6 +38,9 @@ bool resuelve() {
 					iPud.deleteSong(s);
 				}
 				else if (inst == "recent") {
+					int n=0;
+					cin >> n;
+					iPud.listaRecientes(n);
 					cout << "----\n";
 				}
 				cin >> inst;

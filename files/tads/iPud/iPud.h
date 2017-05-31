@@ -1,6 +1,9 @@
 #include "List.h"
 #include <string>
 #include <iostream>
+#include "Error.h"
+#include <stdexcept>
+#include "Exceptions.h"
 #include "HashMap.h"
 using namespace std;
 
@@ -16,7 +19,7 @@ class iPud {
 		Cancion current();
 		void play();
 		int totalTime();
-		List<Cancion> listaCanciones(int n);
+		List<Cancion> listaRecientes(int n);
 		void deleteSong(Cancion& s);
 
 	private:
@@ -28,5 +31,5 @@ class iPud {
 
 		HashMap<Cancion, InfoCancion> ipud;
 		List<Cancion> listaReproduccion;
-
+		List<Cancion> recientes;
 };
