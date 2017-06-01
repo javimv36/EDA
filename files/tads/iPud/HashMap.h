@@ -324,7 +324,7 @@ public:
 	*	 @return Devuelve un iterador a la posicion de
 	*	 clave, o al final del recorrido si clave no encontrada
 	*/
-	ConstIterator find(const Clave &clave) const {
+	ConstIterator cfind(const Clave &clave) const {
 		// Obtenemos el índice asociado a la clave.
 		unsigned int ind = ::hash(clave) % _tam;
 
