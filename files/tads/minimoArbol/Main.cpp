@@ -22,15 +22,17 @@ Arbin<T> leerArbol(const T &repVacio)
 template <class T>
 T minimoArbol(Arbin<T> a)
 {
-    if(a.esVacio()){
-        return NULL;
-    }
-    else if(a.hijoIz().esVacio()&&a.hijoDr().esVacio()){
+    if(a.hijoIz().esVacio()&&a.hijoDr().esVacio()){
         return a.raiz();
     }
     else{
-        T min_iz = minimoArbol(a.hijoIz());
-        T min_dr = minimoArbol(a.hijoDr());
+        T min_iz = a.raiz();
+        T min_dr = a.raiz();
+        if (!a.hijoIz().esVacio())
+            min_iz = minimoArbol(a.hijoIz());
+        if(!a.hijoDr().esVacio())
+            min_dr = minimoArbol(a.hijoDr());
+        
         T min_hijos = (min_iz < min_dr)?min_iz:min_dr;
         T min = (min_hijos < a.raiz())?min_hijos:a.raiz();
         return min;
@@ -40,7 +42,7 @@ T minimoArbol(Arbin<T> a)
 int main()
 {
     char c;
-    while(true){
+    while(cin){
         cin >> c;
         if(c =='N'){
             Arbin<int> a;
@@ -51,7 +53,9 @@ int main()
             string vacio="#";
             a = leerArbol(vacio); // # es la repr. de arbol vacio
             cout << minimoArbol(a) << endl;
+        }else{
+            break;
         }
-        
     }
+    return 0;
 }
