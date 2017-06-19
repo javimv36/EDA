@@ -30,14 +30,18 @@ List<int> concatenaListas(List<int> l_iz, List<int> l_dr){
 }
 bool genealogico(Arbin<int> a, int &gen)
 {
-    if(a.hijoIz().esVacio()&&a.hijoDr().esVacio()){
+    if (a.esVacio()){
+        gen = 0;
+        return true;
+    }
+    else if(a.hijoIz().esVacio()&&a.hijoDr().esVacio()){
         gen = 1;
         return true;
     }
     else{
-        bool genealogico_iz, genealogico_dr = true;
-        int generaciones_iz, generaciones_dr = 0;
-        int edad_iz, edad_dr = -2;
+        bool genealogico_iz = true, genealogico_dr = true;
+        int generaciones_iz = 0, generaciones_dr = 0;
+        int edad_iz = -2, edad_dr = -2;
         if (!a.hijoIz().esVacio()){
             genealogico_iz = genealogico(a.hijoIz(), generaciones_iz);
             edad_iz = a.hijoIz().raiz();
