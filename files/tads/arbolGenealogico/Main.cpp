@@ -20,14 +20,6 @@ Arbin<T> leerArbol(const T &repVacio)
     }
 }
 
-List<int> concatenaListas(List<int> l_iz, List<int> l_dr){
-    while(!l_dr.empty()){
-        int e =l_dr.front();
-        l_dr.pop_front();
-        l_iz.push_back(e);
-    }
-    return l_iz;
-}
 bool genealogico(Arbin<int> a, int &gen)
 {
     if (a.esVacio()){
