@@ -33,8 +33,8 @@ T minimoArbol(Arbin<T> a)
         if(!a.hijoDr().esVacio())
             min_dr = minimoArbol(a.hijoDr());
         
-        T min_hijos = (min_iz < min_dr)?min_iz:min_dr;
-        T min = (min_hijos < a.raiz())?min_hijos:a.raiz();
+        T min = (min_iz < min_dr)?min_iz:min_dr;
+        min = (min < a.raiz())?min:a.raiz();
         return min;
     }
 }
@@ -42,8 +42,9 @@ T minimoArbol(Arbin<T> a)
 int main()
 {
     char c;
+    cin >> c;
     while(cin){
-        cin >> c;
+        
         if(c =='N'){
             Arbin<int> a;
             a = leerArbol(-1); // -1 es la repr. de arbol vacio
@@ -53,9 +54,8 @@ int main()
             string vacio="#";
             a = leerArbol(vacio); // # es la repr. de arbol vacio
             cout << minimoArbol(a) << endl;
-        }else{
-            break;
         }
+        cin >> c;
     }
     return 0;
 }
