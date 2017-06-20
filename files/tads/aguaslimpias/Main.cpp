@@ -1,7 +1,6 @@
 #include <iostream>
 #include <algorithm>
 #include "Arbin.h"
-#include "List.h"
 
 using namespace std;
 
@@ -24,23 +23,20 @@ int navegables(Arbin<int> a, int &caudal)
 {
     if (a.esVacio()){
         caudal = 0;
-        cout << " vacio " << caudal << endl;
         return 0;
     }
     else if(a.hijoIz().esVacio()&&a.hijoDr().esVacio()){
         caudal = 1;
-        cout << " hoja " << caudal << endl;
         return 0;
     }
     else{
         int caudal_iz=0, caudal_dr=0;
         int navegables_iz = navegables(a.hijoIz(), caudal_iz);
         int navegables_dr = navegables(a.hijoDr(), caudal_dr);
-        caudal = caudal_iz + caudal_dr;
+        caudal = caudal_iz + caudal_dr - a.raiz();
         int nav = navegables_iz + navegables_dr;
-        if (caudal>=3)nav++;
-        caudal-=a.raiz();
-        cout << nav << " " << caudal << endl;
+        nav+=(caudal_iz>=3)?1:0;
+        nav+=(caudal_dr>=3)?1:0;
         return nav;
     }
 }
