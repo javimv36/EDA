@@ -37,6 +37,7 @@ int navegables(Arbin<int> a, int &caudal)
         int nav = navegables_iz + navegables_dr;
         nav+=(caudal_iz>=3)?1:0;
         nav+=(caudal_dr>=3)?1:0;
+        caudal=(caudal<0)?0:caudal;
         return nav;
     }
 }
