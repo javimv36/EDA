@@ -94,38 +94,17 @@ public:
 
 	void intercala_nodos(){
 		Nodo* step = _prim;
-		while(step!=_ult){
+		while (step->_sig != _ult){
 			Nodo* intercala = _ult;
-			_ult=intercala->_ant;
-			_ult->_sig=NULL;
+			intercala->_ant->_sig = NULL;
+			_ult = intercala->_ant;
 			Nodo* siguiente = step->_sig;
-			step->_sig=intercala;
-			intercala->_sig=siguiente;
-			intercala->_ant=step;
-			siguiente->_ant=intercala;
-			step=siguiente;
+			step->_sig = intercala;
+			intercala->_sig = siguiente;
+			intercala->_ant = step;
+			siguiente->_ant = intercala;
+			step = siguiente;
 		}
-	}
-
-	void removeAll(const T &elem) {
-		Nodo* avance = _prim;
-		while (avance != NULL) {
-			if (avance->_elem == elem) {
-				if (avance->_ant == NULL) {
-					pop_front();
-				}
-				else if (avance->_sig == NULL) {
-					pop_back();
-				}
-				else {
-					avance->_ant->_sig = avance->_sig;
-					avance->_sig->_ant = avance->_ant;
-				}
-				_numElems--;
-			}
-			avance = avance->_sig;
-		}
-		delete avance;
 	}
 
 	/**

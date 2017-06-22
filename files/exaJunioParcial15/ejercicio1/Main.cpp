@@ -19,7 +19,7 @@ void mostrarLista(List<int>* l){
 }
 
 int main(){
-	
+
 	int n, numCasos;
 	cin >> numCasos;
 	for (int i = 0; i < numCasos; i++){
