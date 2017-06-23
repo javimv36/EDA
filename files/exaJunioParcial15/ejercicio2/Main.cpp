@@ -61,9 +61,7 @@ int iTiempoAyuda(const Arbin<char> &a, int nivel)
 {
     if (a.esVacio()) //El árbol es vacio
         return 0;
-    //else if (a.hijoIz().esVacio()&&a.hijoDr().esVacio()) //El nodo es hoja
-    //    return (a.raiz()=='x')?(nivel*2):0; //si hay alguien devuelve 2h*nivel bajado (1 hora de bajar y 1 de subir) si no 0 (habría que cambia el valor de la raiz)
-    else    //El nodo no es hoja y puede tener o no excursionista atrapado. Si es así suma 2h*nivel a lo que se tarde por los dos hijos.
+     else    //El nodo no es hoja y puede tener o no excursionista atrapado. Si es así suma 2h*nivel a lo que se tarde por los dos hijos.
         return iTiempoAyuda(a.hijoIz(), nivel+1) + iTiempoAyuda(a.hijoDr(), nivel+1) + ((a.raiz()=='x')?(nivel*2):0);
 }
 
