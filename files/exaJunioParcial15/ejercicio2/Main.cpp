@@ -43,18 +43,6 @@ Arbin<T> leerArbol(const T &repVacio)
     Caso:
         excursionistas atrapados: 5
         tiempo de rescate: 24h
-
-    Preguntas:
-        En esta versión se generaliza el prototipo de la función para saber en qué altura nos
-        encontramos cuando tratamos el nodo.
-
-        El enunciado especifica tanto la cabecera que debe respetar la función (iTiempoAyuda no lo respeta)
-        y en la implementación del algoritmo no se refleja el hecho de que el excursionista que ayuda a los
-        demás atrapados, debe rescatarlos DE UNO EN UNO. De esas dos frases mi implementación de ayer en la que
-        desde cada nodo bajaba a rescatar de uno en uno a los excursionistas (esa era la idea por los que 
-        debía eliminarlos una vez recogidos) y por no usar variables auxiliares que violasen la definición
-        de la función.
-
     
 */
 int iTiempoAyuda(const Arbin<char> &a, int nivel)
