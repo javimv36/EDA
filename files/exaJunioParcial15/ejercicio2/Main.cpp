@@ -45,55 +45,30 @@ Arbin<T> leerArbol(const T &repVacio)
         tiempo de rescate: 24h
 
     Preguntas:
-        He entendido el ejercicio como que hay que resolver el problema recogiendo a los excursionistas
-        como dice el enunciado: de uno en uno. Es decir que tengo que resolver el problema bajando hasta
-        encontrar un excursionista atrapado y en ese momento llevarlo a la cima contabilizando el tiempo
-        que conlleve. El problema es que puede que más abajo de ese camino haya otro excursionista atrapado
-        y para poder llegar a él no puedo encontrar a ningún excursionista en el camino. Esto me lleva
-        a querer cambiar el valor de la raiz cuando me encuentre a un excursionista atrapado.
+        En esta versión se generaliza el prototipo de la función para saber en qué altura nos
+        encontramos cuando tratamos el nodo.
 
-        Otra opción que se me ocurre es llevar la cuenta de lo que llevo por cada hijo pero esta
-        esta implementación respetando la cabecera que exige el problema se me hace compleja.
+        El enunciado especifica tanto la cabecera que debe respetar la función (iTiempoAyuda no lo respeta)
+        y en la implementación del algoritmo no se refleja el hecho de que el excursionista que ayuda a los
+        demás atrapados, debe rescatarlos DE UNO EN UNO. De esas dos frases mi implementación de ayer en la que
+        desde cada nodo bajaba a rescatar de uno en uno a los excursionistas (esa era la idea por los que 
+        debía eliminarlos una vez recogidos) y por no usar variables auxiliares que violasen la definición
+        de la función.
 
-        Otra opción es que haya entendido mal el problema.
     
 */
-int tiempoAyuda(const Arbin<char> &a)
+int iTiempoAyuda(const Arbin<char> &a, int nivel)
 {
     if (a.esVacio()) //El árbol es vacio
         return 0;
-    else if (a.hijoIz().esVacio()&&a.hijoDr().esVacio()){ //El nodo es hoja
-        return (a.raiz() == 'x')?2:0; //si hay alguien devuelve 2 si no 0 (habría que cambia el valor de la raiz)
-    }
-    else if (a.raiz() == 'x') // El nodo tiene un excursionista atrapado
-    {
-        //a._ra='p';    
-        // Sabiendo que el atributo es privado, 
-        //¿cómo se modifica, si se puede, para no volver a recoger al 
-        //excursionista 'x' y dejar ese paso libre 'p'
-        return 2;
-    }
-    else
-    {
-        int horasIz = 0, horasDr = 0, tiempo = 0;
-        tiempo = tiempoAyuda(a.hijoIz());
-        horasIz += tiempo+2;
-        while (tiempo != 0) //¿Es correcto bajar tantas veces como 
-                            //excursionistas haya atrapado en cada hijo del árbol?
-                            //Esto lo hago entendiendo
-        {
-            horasIz += tiempo+2;
-            tiempo = tiempoAyuda(a.hijoIz());
-        }
-        tiempo = tiempoAyuda(a.hijoDr());
-        while (tiempo != 0) //Igualmente por el hijo derecho baja a recoger a los
-                            //excursionistas tantas veces como excursionistas haya
-        {
-            horasDr += tiempo+2;
-            tiempo = tiempoAyuda(a.hijoDr());
-        }
-        return horasIz + horasDr;
-    }
+    //else if (a.hijoIz().esVacio()&&a.hijoDr().esVacio()) //El nodo es hoja
+    //    return (a.raiz()=='x')?(nivel*2):0; //si hay alguien devuelve 2h*nivel bajado (1 hora de bajar y 1 de subir) si no 0 (habría que cambia el valor de la raiz)
+    else    //El nodo no es hoja y puede tener o no excursionista atrapado. Si es así suma 2h*nivel a lo que se tarde por los dos hijos.
+        return iTiempoAyuda(a.hijoIz(), nivel+1) + iTiempoAyuda(a.hijoDr(), nivel+1) + ((a.raiz()=='x')?(nivel*2):0);
+}
+
+int tiempoAyuda(const Arbin<char> &a){
+    return iTiempoAyuda(a, 0);
 }
 
 int main()
