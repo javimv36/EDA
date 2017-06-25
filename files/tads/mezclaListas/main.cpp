@@ -24,9 +24,9 @@ void mostrarLista(List<int>* l) {
 
 List<int>* concatena(List<int>* l1, List<int>* l2){
     List<int>* ret = new List<int>();
-    auto it1 = l1->cbegin();
-    auto it2 = l2->cbgin();
-    while(it1!=l1->cend()&&it2!=l2->cend()){
+    List<int>::ConstIterator it1 = l1->cbegin();
+    List<int>::ConstIterator it2 = l2->cbegin();
+    while(it1 != l1->cend() || it2 != l2->cend()){
         if(it2==l2->cend()){
             ret->push_back(it1.elem());
             it1.next();
