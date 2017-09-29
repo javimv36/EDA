@@ -1,5 +1,5 @@
 <!--
-Esta obra está bajo una licencia Licencia Creative Commons Atribución 4.0 Internacional.
+Esta obra está bajo una licenFFa Licencia Creative Commons Atribución 4.0 Internacional.
 Licencia: http://creativecommons.org/licenses/by/4.0/
 -->
 # Estructura de Datos y Algoritmos
