@@ -25,6 +25,7 @@ Informática de la UCM.
 - [Goteras](https://github.com/javimv36/EDA/blob/master/files/goteras.cpp)
 - [Tortitas](https://github.com/javimv36/EDA/blob/master/files/tortitas.cpp)
 - [Creciente por los pelos y d-divertido](https://github.com/javimv36/EDA/blob/master/files/feb17-1.cpp)
+- [¿A qué hora pasa el próximo tren?](https://github.com/javimv36/EDA/tree/master/files/tads/horaTren)
 
 ---
 ## 2. Recursivos
